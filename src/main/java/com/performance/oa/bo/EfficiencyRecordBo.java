@@ -5,6 +5,11 @@ import java.util.Date;
 public class EfficiencyRecordBo {
 
     /**
+     * 子任务名
+     */
+    private String name;
+
+    /**
      * 效能主键id
      */
     private Integer efficiencyIds;
@@ -38,6 +43,24 @@ public class EfficiencyRecordBo {
      * 计划结束时间
      */
     private Date planEndTime;
+
+    /**
+     * 分值
+     */
+    private Double score;
+
+    /**
+     * 权重
+     */
+    private Double weight;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Integer getDepartmentId() {
         return departmentId;
@@ -95,4 +118,19 @@ public class EfficiencyRecordBo {
         this.month = month;
     }
 
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
+    public Double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Double weight) {
+        this.weight = weight;
+    }
 }

@@ -10,6 +10,11 @@ import javax.persistence.Table;
 public class Efficiency extends IdEntity{
 
     /**
+     * 子任务名
+     */
+    private String name;
+
+    /**
      * 员工姓名
      */
     private String employeName;
@@ -118,6 +123,24 @@ public class Efficiency extends IdEntity{
      * 项目状态 0 进行中 1 完成
      */
     private Integer projectState;
+
+    /**
+     * 分值
+     */
+    private Double score;
+
+    /**
+     * 权重
+     */
+    private Double weight;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getEmployeName() {
         return employeName;
@@ -295,6 +318,19 @@ public class Efficiency extends IdEntity{
         this.projectState = projectState;
     }
 
-    
-    
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
+    public Double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Double weight) {
+        this.weight = weight;
+    }
 }

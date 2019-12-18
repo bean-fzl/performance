@@ -48,27 +48,6 @@
 						<!-- <li class="active"><a href="#">首页</a></li> -->
 						<li class="active"><a href="javascript:void(0);"
 							onclick="js_method_fun('/admin/performanceEvaluation/list',this)">绩效总评管理</a></li>
-						<li><a href="javascript:void(0);"
-							onclick="js_method_fun('/admin/leaderAssessment/listPage',this)">上级评价管理</a></li>
-						<li class="dropdown"><a href="#collapseOne"
-							data-toggle="collapse" class="dropdown-toggle">客户满意 <b
-								class="caret"></b></a>
-							<ul id="collapseOne" class="collapse nav nav-list">
-								<li><a href="javascript:void(0);"
-									onclick="js_method_fun('/admin/satisfaction/list',this)">客户满意管理</a></li>
-								<li><a href="javascript:void(0);"
-									onclick="js_method_fun('/admin/satisfaction/resultList',this)">月度客户满意</a></li>
-							</ul></li>
-						<li class="dropdown"><a href="#collapse3"
-							data-toggle="collapse" class="dropdown-toggle">专业管理 <b
-								class="caret"></b></a>
-							<ul id="collapse3" class="collapse nav nav-list">
-								<li><a href="javascript:void(0);"
-									onclick="js_method_fun('/admin/specialty/list',this)">专业管理</a></li>
-								<li><a href="javascript:void(0);"
-									onclick="js_method_fun('/admin/specialty/employeScore',this)">员工专业性得分</a></li>
-							</ul></li>
-
 						<li class="dropdown"><a href="#collapseTwo"
 							data-toggle="collapse" class="dropdown-toggle">效能管理 <b
 								class="caret"></b></a>
@@ -86,8 +65,6 @@
 							onclick="js_method_fun('/admin/department/list',this)">部门管理</a></li>
 						<li><a href="javascript:void(0);"
 							onclick="js_method_fun('/admin/employe/list',this)">员工管理</a></li>
-						<li><a href="javascript:void(0);"
-							onclick="js_method_fun('/admin/properties',this)">绩效维度满分管理</a></li>
 					</ul>
 				</div>
 				<div class="span10">

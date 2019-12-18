@@ -52,7 +52,8 @@
 				</tr>
 			</table>
 			<button class="btn" id="btnSearch" type="submit">搜索</button>
-			<button class="btn" id="btnSearch" type="reset">清空</button>
+			<button class="btn" id="clear" type="reset">清空</button>
+			<button id="btnExport" type="button" class="btn">导出</button>
 	</form>
 	<div id="pager"></div>
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">
@@ -121,7 +122,25 @@
 		$(function() {
 			validate();
 			$("#queryForm").submit();
-		})
+			$("#btnExport").click(function() {
+				$("#bar").css("display", "block");
+				var queryData = $("#queryForm").serialize();
+				$.ajax({
+					type : "POST",
+					url : "${ctx}/admin/performanceEvaluation/export",
+					data : queryData,
+					success : function(data) {
+						$("#bar").css("display", "none");
+						var url = "${ctx}/admin/performanceEvaluation/download?fileName="+ data;
+						window.open(url);
+					}
+				});
+			})
+		});
+
+
+
+
 		function formatDate(times) {
 			var date = new Date(times);
 			var fm = date.format('yyyy-MM-dd');

@@ -16,8 +16,11 @@
 		<thead>
 		   <tr>
 		   		<td>序号</td>
+			    <td>任务名</td>
 		   		<td>姓名</td>
 		   		<td>部门</td>
+			    <td>分值</td>
+			    <td>权重(%)</td>
 		   		<td>计划时长</td>
 		   </tr>
 		 </thead>
@@ -37,8 +40,11 @@
 		{{each(i,p) data.content}}
 				<tr>
 					<td>@{i+1}</td>
+					<td>@{p.name}</td>
 					<td>@{p.employeName}</td>
 					<td>@{p.departmentName}</td>
+					<td>@{p.score}</td>
+					<td>@{p.weight}</td>
 					<td>@{"周期："+formatDate(p.planBeginTime)+"至"+formatDate(p.planEndTime)+"；工时："+p.planHours}</td>
 					
 				</tr>

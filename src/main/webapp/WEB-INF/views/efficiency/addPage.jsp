@@ -36,6 +36,9 @@
 			/* h = $("#tags").find("tr").length+1; */
 			var str = "<tr>"
 							+"<td  class='project_table_no_cls'>"+h+"</td>"
+							+"<td>\n" +
+							"<input type=\"text\" id='efficiencyRecordBo["+i+"].name' name='efficiencyRecordBo["+i+"].name' class=\"input-small required\"  minlength=\"1\"/>\n" +
+							"</td>"
 							+"<td><select id='department_id_"+i+"' onchange='empFun(this.id)' name='efficiencyRecordBo["+i+"].departmentId' class='span2 required'><option>--请选择--</option></select></td>"
 							+"<td><select id='employe_id_"+i+"' name='efficiencyRecordBo["+i+"].employeId' class='span2 required'><option>--请选择--</option></select></td>"
 							+"<td>"
@@ -58,8 +61,13 @@
 								"\t\t\t\t\t\t\t<option value=\"12\">十二月份</option>\n" +
 								"</select>"
 								+"工时：<input type='text' id='efficiencyRecordBo["+i+"].planHours' name='efficiencyRecordBo["+i+"].planHours' class='input-small digits'  minlength='1'/>"
-								
 							+"</td>"
+							+"<td>\n" +
+							"<input type='text' id='efficiencyRecordBo["+i+"].score' name='efficiencyRecordBo["+i+"].score' class='input-small required digits' minlength='1'/>"+
+							"</td>\n" +
+							"<td>\n" +
+							"<input type='text' id='efficiencyRecordBo["+i+"].weight' name='efficiencyRecordBo["+i+"].weight' class=\"input-small required digits\"  minlength=\"1\"/>%\n" +
+							"</td>"
 							+"<td><input type='button' value='清空' onclick='delValueFun(this)'/></td>"
 						+"</tr>";
 						startPlugin.startInitParam({
@@ -141,15 +149,21 @@
 			<thead>
 			   <tr>
 			   		<td>序号</td>
+				    <td>任务名</td>
 			   		<td>部门</td>
 			   		<td>姓名</td>
 			   		<td>计划时间</td>
+				    <td>分值</td>
+				    <td>权重</td>
 			   		<td>操作</td>
 			   </tr>
 		   	</thead>
 		   	<tbody id="tags"> 
 			   	 <tr>
 			   	   	<td class="project_table_no_cls">1</td>
+					 <td>
+						 <input type="text" id="efficiencyRecordBo[0].name" name="efficiencyRecordBo[0].name" class="input-small required"  minlength="1"/>
+					 </td>
 			   	   	<td>
 			   	   		<select id="department_id"  onchange="empFun(this.id)" name="efficiencyRecordBo[0].departmentId" class="span2 required">
 							<option value=''>--请选择--</option>
@@ -179,7 +193,13 @@
 							<option value="11">十一月份</option>
 							<option value="12">十二月份</option>
 						</select>
-						工时：<input type="text" id="efficiencyRecordBo[0].planHours" name="efficiencyRecordBo[0].planHours" class="input-small required digits"  minlength="1"/>
+						工时：<input type="text" id="efficiencyRecordBo[0].score" name="efficiencyRecordBo[0].score" class="input-small required digits"  minlength="1"/>
+					</td>
+					<td>
+						<input type="text" id="efficiencyRecordBo[0].planHours" name="efficiencyRecordBo[0].planHours" class="input-small required digits"  minlength="1"/>
+					</td>
+					<td>
+						<input type="text" id="efficiencyRecordBo[0].weight" name="efficiencyRecordBo[0].weight" class="input-small required digits"  minlength="1"/>%
 					</td>
 			   	   	<td><input type="button" value="清空" onclick="delValueFun(this)"/></td>
 			   	  </tr> 	

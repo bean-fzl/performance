@@ -181,6 +181,9 @@ public class EfficiencyService {
                                     if(temp.getId().intValue() == temp_eff_one.getEfficiencyIds().intValue()){
                                         //需要修改的数据列表
                                         temp.setMonth(temp_eff_one.getMonth());
+                                        temp.setScore(temp_eff_one.getScore());
+                                        temp.setWeight(temp_eff_one.getWeight());
+                                        temp.setName(temp_eff_one.getName());
                                         udate_list.add(temp);
                                         break;
                                     }
@@ -301,7 +304,10 @@ public class EfficiencyService {
             for(EfficiencyRecordBo temp_o : add_efficiency_list){
                 Efficiency efficiency_record = new Efficiency();
               //添加创建时间  项目名称  及 及创建人名称
+                efficiency_record.setName(temp_o.getName());
                 efficiency_record.setMonth(temp_o.getMonth());
+                efficiency_record.setScore(temp_o.getScore());
+                efficiency_record.setWeight(temp_o.getWeight());
                 efficiency_record.setCreateTime(Calendar.getInstance().getTime());
                 if(null != project.getName()&& "" != project.getName()){
                     efficiency_record.setProjectName(project.getName());
@@ -496,7 +502,10 @@ public class EfficiencyService {
                         //创建Efficiency 对象
                         Efficiency efficiency =new Efficiency();
                         //添加创建时间  项目名称  及 及创建人名称
+                        efficiency.setName(efficiencyRecordBoList.get(i).getName());
                         efficiency.setMonth(efficiencyRecordBoList.get(i).getMonth());
+                        efficiency.setScore(efficiencyRecordBoList.get(i).getScore());
+                        efficiency.setWeight(efficiencyRecordBoList.get(i).getWeight());
                         efficiency.setCreateTime(Calendar.getInstance().getTime());
                         if(null != efficiencyBo.getProjectNameBo() && "" != efficiencyBo.getProjectNameBo()){
                             efficiency.setProjectName(efficiencyBo.getProjectNameBo());
@@ -886,6 +895,10 @@ public class EfficiencyService {
         }
         Page<Efficiency> pageList = efficiencyDao.findAll(sp, pageRequest);
         return pageList;
+    }
+
+    public List<Efficiency> findEfficiencyAll() {
+        return (List<Efficiency>)efficiencyDao.findAll();
     }
 
     /**

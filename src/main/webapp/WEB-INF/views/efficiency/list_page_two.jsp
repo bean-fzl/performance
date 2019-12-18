@@ -63,9 +63,12 @@
 		<thead>
 		  <tr>
 		  	<td>序号</td>
+			<td>任务名</td>
 	   		<td>姓名</td>
 	   		<td>部门</td>
-	   		<td>实际工时</td>
+			<td>分值</td>
+			<td>权重(%)</td>
+			<td>实际工时</td>
 	   		<td>产出工时</td>
 	   		<shiro:hasAnyRoles name="employe">
 	   		<td>录入实际工时</td>
@@ -105,9 +108,11 @@
 					<td>@{i+1}
 						<input type = "hidden" name ="he_i" value = "@{formatDate(p.actualBeginTime)}"/>
 					</td>
+					<td>@{p.name}</td>
 					<td>@{p.employeName}</td>
 					<td>@{p.departmentName}</td>
-
+					<td>@{p.score}</td>
+					<td>@{p.weight}</td>
 
 					<td id= "td_t_@{i}">@{"周期："+formatDate(p.actualBeginTime)+"至"+formatDate(p.actualEndTime)+"；工时："}@{format_Int(p.actualHours)}</td>
 					<td id= "td_td_t_@{i}">@{"周期："+formatDate(p.outputBeginTime)+"至"+formatDate(p.outputEndTime)+"；工时："}@{format_Int(p.outputHours)}</td>

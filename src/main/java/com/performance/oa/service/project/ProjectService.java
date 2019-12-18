@@ -322,6 +322,16 @@ public class ProjectService {
                 }
             }
         }
+        if(projectList.size()>0){
+            projectList.forEach(project->{
+                List<Efficiency> efficiencies = efficiencyDao.findByProjectId(project.getId().intValue());
+                if(efficiencies!=null && efficiencies.size()>0){
+                    project.setTaskAll(efficiencies.size());
+                    Long taskOver = efficiencies.stream().filter(e->e.getOutputHours()!=null).count();
+                    project.setTaskOver(taskOver.intValue());
+                }
+            });
+        }
         return projectList;
     }
 

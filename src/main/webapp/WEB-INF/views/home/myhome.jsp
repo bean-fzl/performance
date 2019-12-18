@@ -55,12 +55,12 @@
 						<shiro:lacksRole name="employe">
 							<shiro:lacksRole name="pm">
 								<a href="#" class="btn btn-large btn-block disabled"
-									type="button">进入</a>
+									type="button">查看效能绩效</a>
 							</shiro:lacksRole>
 						</shiro:lacksRole>
 						<shiro:hasAnyRoles name="employe,pm">
 							<a href="${ctx }/project/findAll" class="btn btn-large btn-block"
-								type="button">进入</a>
+								type="button">查看效能绩效</a>
 						</shiro:hasAnyRoles>
 					</div>
 					<div class="span3 hide">
@@ -107,7 +107,7 @@
 					</div>
 				</div>
 				<br /> <br />
-				<div class="row-fluid">
+				<div class="row-fluid hide">
 					<div class="span12">
 						<shiro:lacksRole name="employe">
 							<a href="#" class="btn btn-large btn-block disabled"
@@ -120,7 +120,7 @@
 					</div>
 				</div>
 				<br /> <br />
-				<div class="row-fluid">
+				<div class="row-fluid hide">
 					<div class="span12">
 						<shiro:lacksRole name="mt">
 							<a href="#" class="btn btn-large btn-block disabled"

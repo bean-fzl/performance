@@ -34,6 +34,9 @@
 			var str = "<tr>"
 							+"<input type =\"hidden\" id='' name='efficiencyRecordBo["+i+"].efficiencyIds' />"
 							+"<td class='project_table_no_cls'>"+h+"</td>"
+							+"<td>\n" +
+							"<input type=\"text\" id='efficiencyRecordBo["+i+"].name' name='efficiencyRecordBo["+i+"].name' class=\"input-small required\"  minlength=\"1\"/>\n" +
+							"</td>"
 							+"<td><select id='department_id_"+i+"' onchange='empFun(this.id)' name='efficiencyRecordBo["+i+"].departmentId' class='span2 required'><option>--请选择--</option></select></td>"
 							+"<td><select id='employe_id_"+i+"' name='efficiencyRecordBo["+i+"].employeId' class='span2 required'><option>--请选择--</option></select></td>"
 							+"<td>"
@@ -57,6 +60,12 @@
 								"</select>"
 								+"工时：<input type='text' id='efficiencyRecordBo["+i+"].planHours' name='efficiencyRecordBo["+i+"].planHours' class='input-small required digits' minlength='1'/>"
 							+"</td>"
+							+"<td>\n" +
+					       "<input type='text' id='efficiencyRecordBo["+i+"].score' name='efficiencyRecordBo["+i+"].score' class='input-small required digits' minlength='1'/>"+
+							"</td>\n" +
+							"<td>\n" +
+							"<input type='text' id='efficiencyRecordBo["+i+"].weight' name='efficiencyRecordBo["+i+"].weight' class=\"input-small required digits\"  minlength=\"1\"/>%\n" +
+							"</td>"
 							+"<td><input type='button' value='清空' onclick='delValueFun(this)'/></td>"
 						+"</tr>";
 						startPlugin.startInitParam({
@@ -137,10 +146,23 @@
 <body >
 	<form id="formId" action="${ctx}/efficiency/edit" method="post" >
 		<div class="control-group">
-			<label for="" class="control-label">项目名称:</label>
 			<div class="controls">
+				<label for="" class="control-label">项目名称:</label>
 				<input type="text" id="projectNameBo" name="projectNameBo" value="${project.name}"  class="input-large" />
 				<input type ="hidden" id="" name="proId" value="${project.id }" />
+				<label for="taskType" class="control-label">任务属性:</label>
+				<select id ="taskType" name="taskType">
+					<option value="-1">—请选择—</option>
+					<option value="1" <c:if test="${project.taskType == '1'}">selected</c:if>>行政管理工作任务</option>
+					<option value="2" <c:if test="${project.taskType == '2'}">selected</c:if>>党群管理工作任务</option>
+					<option value="3" <c:if test="${project.taskType == '3'}">selected</c:if>>财务管理工作任务</option>
+					<option value="4" <c:if test="${project.taskType == '4'}">selected</c:if>>人事管理工作任务</option>
+					<option value="5" <c:if test="${project.taskType == '5'}">selected</c:if>>安全管理工作任务</option>
+					<option value="6" <c:if test="${project.taskType == '6'}">selected</c:if>>通信业务管理工作任务</option>
+					<option value="7" <c:if test="${project.taskType == '7'}">selected</c:if>>信息化业务管理工作任务</option>
+				</select>
+				<label for="workFeeling" class="control-label">工作感想:</label>
+				<textarea id="workFeeling" name="workFeeling" class="input-large" >${project.workFeeling}</textarea>
 			</div>
 		</div>	
 		
@@ -149,9 +171,11 @@
 			<thead>
 			   <tr>
 			   		<td>序号</td>
-			   		<td>部门</td>
-			   		<td>姓名</td>
+				    <td>任务名</td>
+				    <td>部门</td>
 			   		<td>计划时间</td>
+				    <td>分值</td>
+				    <td>权重</td>
 			   		<td>操作</td>
 			   </tr>
 		   	</thead>
@@ -162,6 +186,9 @@
 				   	   	<td class="project_table_no_cls">
 				   	   		${s.index+1}
 				   	   	</td>
+						 <td>
+							 <input type="text" id="efficiencyRecordBo[0].name" name="efficiencyRecordBo[0].name" value = "${listTemp.name}" class="input-small required"  minlength="1"/>
+						 </td>
 				   	   	<td>
 				   	   		<select id="department_id_${s.index}"  onchange="empFun(this.id)"  name="efficiencyRecordBo[${s.index}].departmentId" class="span2 required">
 								<!-- <option value = "">--请选择--</option> -->
@@ -211,6 +238,12 @@
 							</select>
 							工时:<input type="text" id="efficiencyRecordBo[${s.index}].planHours" name="efficiencyRecordBo[${s.index}].planHours" value = "${listTemp.planHours}" class="input-small required digits"  minlength="1"/>
 						</td>
+						 <td>
+							 <input type="text" id="efficiencyRecordBo[0].score" name="efficiencyRecordBo[0].score" value = "${listTemp.score}" class="input-small required digits"  minlength="1"/>
+						 </td>
+						 <td>
+							 <input type="text" id="efficiencyRecordBo[0].weight" name="efficiencyRecordBo[0].weight" value = "${listTemp.weight}" class="input-small required digits"  minlength="1"/>%
+						 </td>
 				   	   	<td class="td_table_no_cls">
 				   	   		<input type="button" value="清空" onclick="delValueFun(this)"/>
 				   	   		<input type="hidden" name = "begin_tiem" value="<fmt:formatDate value= '${listTemp.planBeginTime}' pattern='yyyy-MM-dd'/>" />

@@ -16,6 +16,8 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
+import com.performance.oa.entity.Efficiency;
+import com.performance.oa.service.efficiency.EfficiencyService;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -39,6 +41,8 @@ public class PerformanceEvaluationService {
     @Autowired
     private PerformanceEvaluationDao performanceEvaluationDao;
     private Logger log = LoggerFactory.getLogger(PerformanceEvaluationService.class);
+    @Autowired
+    private EfficiencyService efficiencyService;
 
     /**
      * 查询绩效
@@ -224,6 +228,71 @@ public class PerformanceEvaluationService {
         }
         return filePath;
     }
+
+    public String exportEfficiency(String pathPre) {
+        List<Efficiency> list = efficiencyService.findEfficiencyAll();
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        String filePath = Paths.get(pathPre, "jixiao" + f.format(Calendar.getInstance().getTime()) + ".xls").toString();
+        File file = new File(filePath);
+        if (file.exists()) {
+            file.delete();
+        }
+        try {
+            if (!file.getParentFile().exists()) {
+                file.getParentFile().mkdirs();
+            }
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
+        Long sheetNum = 60000l;
+        Long num = (long) Math.ceil((double) list.size() / sheetNum);
+        SimpleDateFormat f1 = new SimpleDateFormat("yyyy-MM");
+        for (int j = 0; j < num; j++) {
+            HSSFSheet sheet = hssfWorkbook.createSheet("sheet" + j);
+            HSSFRow hssftitle = sheet.createRow(0);
+            String[] titles = { "序号","姓名", "项目", "周期", "计划工时", "实际工时", "产出工时", "项目经理", "项目状态" };
+            for (int i = 0; i < titles.length; i++) {
+                HSSFCell c = hssftitle.createCell(i);
+                c.setCellValue(titles[i]);
+            }
+            for (int i = 0; i < Math.min(list.size() - j * sheetNum, sheetNum); i++) {
+                HSSFRow hssfrow = sheet.createRow(i + 1);
+                hssfrow.createCell(0).setCellValue(list.get((int) (j * sheetNum + i)).getId());
+                hssfrow.createCell(1).setCellValue(list.get((int) (j * sheetNum + i)).getEmployeName() != null
+                        ? list.get((int) (j * sheetNum + i)).getProjectName() : "");
+                hssfrow.createCell(2).setCellValue(list.get((int) (j * sheetNum + i)).getProjectName() != null
+                        ? list.get((int) (j * sheetNum + i)).getProjectName() : "");
+                hssfrow.createCell(3).setCellValue(list.get((int) (j * sheetNum + i)).getPlanBeginTime());
+                hssfrow.createCell(4).setCellValue(list.get((int) (j * sheetNum + i)).getPlanHours());
+                hssfrow.createCell(5).setCellValue(list.get((int) (j * sheetNum + i)).getActualHours() != null
+                        ? list.get((int) (j * sheetNum + i)).getActualHours() : 0);
+                hssfrow.createCell(6).setCellValue(list.get((int) (j * sheetNum + i)).getOutputHours() != null
+                        ? list.get((int) (j * sheetNum + i)).getOutputHours() : 0);
+                hssfrow.createCell(7).setCellValue(list.get((int) (j * sheetNum + i)).getPm());
+                hssfrow.createCell(8).setCellValue(list.get((int) (j * sheetNum + i)).getProjectState());
+            }
+        }
+        FileOutputStream fileOutputStream = null;
+        try {
+            fileOutputStream = new FileOutputStream(file);
+            hssfWorkbook.write(fileOutputStream);
+        } catch (FileNotFoundException e) {
+            log.error("export", e);
+        } catch (IOException e) {
+            log.error("export", e);
+        } finally {
+            try {
+                fileOutputStream.close();
+                hssfWorkbook.close();
+            } catch (IOException e) {
+                log.error("export close", e);
+            }
+        }
+        return filePath;
+    }
+
     public void delete(String filePath){
         File file = new File(filePath);
         if (file.exists()) {

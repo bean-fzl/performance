@@ -69,6 +69,14 @@ public class AdminPerformanceEvaluationController {
         return Paths.get(filePath).getFileName().toString();
     }
 
+    @RequestMapping(value = "exportEfficiency", method = RequestMethod.POST)
+    @ResponseBody
+    public String exportEfficiency(HttpServletRequest request) {
+        String pathPre = request.getServletContext().getRealPath("/exportData");
+        String filePath = performanceEvaluationService.exportEfficiency(pathPre);
+        return Paths.get(filePath).getFileName().toString();
+    }
+
     @RequestMapping(value = "download")
     public String download(@RequestParam("fileName") String fileName, HttpServletRequest request,
             HttpServletResponse response) {

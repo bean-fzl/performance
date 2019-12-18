@@ -1,9 +1,9 @@
 package com.performance.oa.entity;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import java.util.Date;
 
 
 @Entity
@@ -59,6 +59,12 @@ public class Project extends IdEntity{
      * 项目管理员id
      */
     private Integer pmId;
+
+    @Transient
+    private Integer taskAll;
+
+    @Transient
+    private Integer taskOver;
 
     public String getName() {
         return name;
@@ -139,5 +145,20 @@ public class Project extends IdEntity{
     public void setWorkFeeling(String workFeeling) {
         this.workFeeling = workFeeling;
     }
-    
+
+    public Integer getTaskAll() {
+        return taskAll;
+    }
+
+    public void setTaskAll(Integer taskAll) {
+        this.taskAll = taskAll;
+    }
+
+    public Integer getTaskOver() {
+        return taskOver;
+    }
+
+    public void setTaskOver(Integer taskOver) {
+        this.taskOver = taskOver;
+    }
 }

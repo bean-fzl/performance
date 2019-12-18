@@ -45,10 +45,6 @@ public class EfficiencyAdminController {
         model.addAttribute("efficiency", efficiency);
         return "efficiencyAdmin/cheackPage";
     }
-    
-    
-    
-    
 
     /**时间自动格式化
     * @author xieang

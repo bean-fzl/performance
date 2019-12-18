@@ -40,8 +40,6 @@
 </head>
 
 <body>
-
-
 	<%-- <c:forEach items="${projectList}" var="listTemp" varStatus="s" >
 			<a href="${ctx}/efficiency/list?proId=${listTemp.id}">${listTemp.name}</a>
 			<br/>
@@ -53,7 +51,7 @@
 					<li class="nav-header"><h4>项目列表</h4></li>
 					<c:forEach items="${projectList}" var="listTemp" varStatus="s">
 						<%-- <a href="${ctx}/efficiency/list?proId=${listTemp.id}"></a> --%>
-						<li><a href="javascript:void(0);" id="t_${s.index}" onclick="js_method_fun(${listTemp.id},this.id)">${listTemp.name}</a>
+						<li><a href="javascript:void(0);" id="t_${s.index}" onclick="js_method_fun(${listTemp.id},this.id)">${listTemp.name}<span style="float: right;">${listTemp.taskOver}/${listTemp.taskAll}</span></a>
 						</li>
 					</c:forEach>
 				</ul>

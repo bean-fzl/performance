@@ -9,6 +9,12 @@ import com.performance.oa.entity.Employe;
 public class EfficiencyViewVo {
 
     private Long id;
+
+    /**
+     * 子任务名
+     */
+    private String name;
+
     /**
      * 员工姓名
      */
@@ -110,7 +116,25 @@ public class EfficiencyViewVo {
      * 负荷率百分比
      */
     private Double loadRate;
-    
+
+    /**
+     * 分值
+     */
+    private Double score;
+
+    /**
+     * 权重
+     */
+    private Double weight;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     private List<Employe> employeList;
 
     public String getEmployeName() {
@@ -296,5 +320,20 @@ public class EfficiencyViewVo {
     public void setMonth(Integer month) {
         this.month = month;
     }
-    
+
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
+    public Double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Double weight) {
+        this.weight = weight;
+    }
 }
