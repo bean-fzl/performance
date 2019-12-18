@@ -1,4 +1,4 @@
-package com.ync365.oa.service.specialty;
+package com.performance.oa.service.specialty;
 
 
 import java.util.ArrayList;
@@ -13,13 +13,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import com.ync365.oa.bo.SpecialtyVo;
-import com.ync365.oa.entity.Specialty;
-import com.ync365.oa.query.SpecialtyQuery;
-import com.ync365.oa.repository.DepartmentDao;
-import com.ync365.oa.repository.EmployeDao;
-import com.ync365.oa.repository.SpecialtyDao;
-import com.ync365.oa.repository.SpecialtyJXDao;
+import com.performance.oa.bo.SpecialtyVo;
+import com.performance.oa.entity.Specialty;
+import com.performance.oa.query.SpecialtyQuery;
+import com.performance.oa.repository.DepartmentDao;
+import com.performance.oa.repository.EmployeDao;
+import com.performance.oa.repository.SpecialtyDao;
+import com.performance.oa.repository.SpecialtyJXDao;
 
 
 /**

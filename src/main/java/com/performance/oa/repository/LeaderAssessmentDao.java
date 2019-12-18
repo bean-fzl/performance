@@ -1,10 +1,10 @@
-package com.ync365.oa.repository;
+package com.performance.oa.repository;
 
 
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import com.ync365.oa.entity.LeaderAssessment;
+import com.performance.oa.entity.LeaderAssessment;
 
 public interface LeaderAssessmentDao extends PagingAndSortingRepository<LeaderAssessment, Long>, JpaSpecificationExecutor<LeaderAssessment> {
 }

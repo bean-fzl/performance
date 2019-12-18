@@ -1,6 +1,6 @@
-package com.ync365.oa.bo;
+package com.performance.oa.bo;
 
-import com.ync365.oa.entity.Properties;
+import com.performance.oa.entity.Properties;
 
 public class PropertiesBo {
     private Properties efficiency;

@@ -3,10 +3,10 @@
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  *******************************************************************************/
-package com.ync365.oa.repository;
+package com.performance.oa.repository;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
-import com.ync365.oa.entity.User;
+import com.performance.oa.entity.User;
 
 public interface UserDao extends PagingAndSortingRepository<User, Long> {
 	User findByLoginName(String loginName);

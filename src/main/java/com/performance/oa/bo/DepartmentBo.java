@@ -1,9 +1,9 @@
-package com.ync365.oa.bo;
+package com.performance.oa.bo;
 
 import java.util.Date;
 import java.util.List;
 
-import com.ync365.oa.entity.Employe;
+import com.performance.oa.entity.Employe;
 
 public class DepartmentBo {
 	private Long id;

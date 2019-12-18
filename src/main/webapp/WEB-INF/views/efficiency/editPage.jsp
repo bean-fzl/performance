@@ -38,12 +38,24 @@
 							+"<td><select id='employe_id_"+i+"' name='efficiencyRecordBo["+i+"].employeId' class='span2 required'><option>--请选择--</option></select></td>"
 							+"<td>"
 								+"周期:"
-						   	   	+"<input class='Wdate input-small required' readonly='readonly' onFocus=\"WdatePicker({lang:\'zh-cn\',dateFmt:\'yyyy-MM-dd\',minDate:\'%y-%M-%d\' ,maxDate:\'#F{$dp.$D(\\'efficiencyRecordBo["+i+"].planEndTime\\') || \\'%y-%M-%ld\\' }\'})\""
-								+"type='text' placeholder='—请选择—' id='efficiencyRecordBo["+i+"].planBeginTime' name='efficiencyRecordBo["+i+"].planBeginTime' />"
-								+" - "
-								+"<input class='Wdate input-small required' readonly='readonly' onFocus=\"WdatePicker({lang:\'zh-cn\',dateFmt:\'yyyy-MM-dd \',minDate:\'#F{$dp.$D(\\'efficiencyRecordBo["+i+"].planBeginTime\\')  || \\'%y-%M-%d\\' }\' ,maxDate:\'%y-%M-%ld\' })\" "
-								+"type='text' placeholder='—请选择—' id='efficiencyRecordBo["+i+"].planEndTime' name='efficiencyRecordBo["+i+"].planEndTime' />&nbsp;"
-								+"工时：<input type='text' id='efficiencyRecordBo["+i+"].planHours' name='efficiencyRecordBo["+i+"].planHours' class='input-small required digits workhours' minlength='1'/>"
+								+"<input type=\"hidden\" id="+i+"_planBeginTime\" name=\"efficiencyRecordBo["+i+"].planBeginTime\" />\n" +
+								"<input type=\"hidden\" id="+i+"_planEndTime\" name=\"efficiencyRecordBo["+i+"].planEndTime\"  />\n" +
+								"<select id="+i+"_month\" name=\"efficiencyRecordBo["+i+"].month\" onchange=\"setPlanTime("+i+")\">\n" +
+								"\t\t\t\t\t\t\t<option value=\"-1\">—请选择—</option>\n" +
+								"\t\t\t\t\t\t\t<option value=\"1\">一月份</option>\n" +
+								"\t\t\t\t\t\t\t<option value=\"2\">二月份</option>\n" +
+								"\t\t\t\t\t\t\t<option value=\"3\">三月份</option>\n" +
+								"\t\t\t\t\t\t\t<option value=\"4\">四月份</option>\n" +
+								"\t\t\t\t\t\t\t<option value=\"5\">五月份</option>\n" +
+								"\t\t\t\t\t\t\t<option value=\"6\">六月份</option>\n" +
+								"\t\t\t\t\t\t\t<option value=\"7\">七月份</option>\n" +
+								"\t\t\t\t\t\t\t<option value=\"8\">八月份</option>\n" +
+								"\t\t\t\t\t\t\t<option value=\"9\">九月份</option>\n" +
+								"\t\t\t\t\t\t\t<option value=\"10\">十月份</option>\n" +
+								"\t\t\t\t\t\t\t<option value=\"11\">十一月份</option>\n" +
+								"\t\t\t\t\t\t\t<option value=\"12\">十二月份</option>\n" +
+								"</select>"
+								+"工时：<input type='text' id='efficiencyRecordBo["+i+"].planHours' name='efficiencyRecordBo["+i+"].planHours' class='input-small required digits' minlength='1'/>"
 							+"</td>"
 							+"<td><input type='button' value='清空' onclick='delValueFun(this)'/></td>"
 						+"</tr>";
@@ -140,7 +152,6 @@
 			   		<td>部门</td>
 			   		<td>姓名</td>
 			   		<td>计划时间</td>
-			   		
 			   		<td>操作</td>
 			   </tr>
 		   	</thead>
@@ -182,12 +193,23 @@
 							</select>
 						</td>
 				   	   	<td>
-				   	   		周期:<input class="Wdate input-small required"  readonly="readonly" onFocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd ',minDate:'%y-%M-%d',maxDate:'#F{$dp.$D(\'efficiencyRecordBo[${s.index}].planEndTime\') || \'%y-%M-%ld\' }'})"
-							type="text" placeholder="—请选择—" id="efficiencyRecordBo[${s.index}].planBeginTime"  value = "<fmt:formatDate value= '${listTemp.planBeginTime}' pattern='yyyy-MM-dd'/>" name="efficiencyRecordBo[${s.index}].planBeginTime" />
-							-
-							<input class="Wdate input-small required" readonly="readonly" onFocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd ',minDate:'#F{$dp.$D(\'efficiencyRecordBo[${s.index}].planBeginTime\') || \'%y-%M-%d\'}' ,maxDate:'%y-%M-%ld' })" 
-							type="text" placeholder="—请选择—" id="efficiencyRecordBo[${s.index}].planEndTime" value = "<fmt:formatDate value= '${listTemp.planEndTime}' pattern='yyyy-MM-dd'/>"  name="efficiencyRecordBo[${s.index}].planEndTime"  />&nbsp;
-							工时:<input type="text" id="efficiencyRecordBo[${s.index}].planHours" name="efficiencyRecordBo[${s.index}].planHours" value = "${listTemp.planHours}" class="input-small required digits workhours"  minlength="1"/>
+				   	   		周期:
+							<select id="${s.index}_month" name="efficiencyRecordBo[${s.index}].month" onchange="setPlanTime(${s.index})">
+								<option value="-1">—请选择—</option>
+								<option value="1" <c:if test="${listTemp.month == '1'}">selected</c:if>>一月份</option>
+								<option value="2" <c:if test="${listTemp.month == '2'}">selected</c:if>>二月份</option>
+								<option value="3" <c:if test="${listTemp.month == '3'}">selected</c:if>>三月份</option>
+								<option value="4" <c:if test="${listTemp.month == '4'}">selected</c:if>>四月份</option>
+								<option value="5" <c:if test="${listTemp.month == '5'}">selected</c:if>>五月份</option>
+								<option value="6" <c:if test="${listTemp.month == '6'}">selected</c:if>>六月份</option>
+								<option value="7" <c:if test="${listTemp.month == '7'}">selected</c:if>>七月份</option>
+								<option value="8" <c:if test="${listTemp.month == '8'}">selected</c:if>>八月份</option>
+								<option value="9" <c:if test="${listTemp.month == '9'}">selected</c:if>>九月份</option>
+								<option value="10" <c:if test="${listTemp.month == '10'}">selected</c:if>>十月份</option>
+								<option value="11" <c:if test="${listTemp.month == '11'}">selected</c:if>>十一月份</option>
+								<option value="12" <c:if test="${listTemp.month == '12'}">selected</c:if>>十二月份</option>
+							</select>
+							工时:<input type="text" id="efficiencyRecordBo[${s.index}].planHours" name="efficiencyRecordBo[${s.index}].planHours" value = "${listTemp.planHours}" class="input-small required digits"  minlength="1"/>
 						</td>
 				   	   	<td class="td_table_no_cls">
 				   	   		<input type="button" value="清空" onclick="delValueFun(this)"/>

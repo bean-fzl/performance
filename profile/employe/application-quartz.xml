@@ -13,7 +13,7 @@
 		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd
 		http://www.springframework.org/schema/task	http://www.springframework.org/schema/task/spring-task.xsd"
 	default-lazy-init="false">
-	<bean id="taskService" class="com.ync365.oa.service.task.TaskService"></bean>
+	<bean id="taskService" class="com.performance.oa.service.task.TaskService"></bean>
 	<task:scheduled-tasks>
 		<!-- 每小时更新配置 -->
 		<task:scheduled ref="taskService" method="doSetProperties"

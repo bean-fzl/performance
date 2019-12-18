@@ -1,8 +1,8 @@
-package com.ync365.oa.bo;
+package com.performance.oa.bo;
 
 import java.util.List;
 
-import com.ync365.oa.entity.PerformanceEvaluation;
+import com.performance.oa.entity.PerformanceEvaluation;
 
 public class PerformanceEvaluationBo {
     private List<PerformanceEvaluation> PerformanceEvaluation;

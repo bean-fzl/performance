@@ -12,7 +12,7 @@
 	<div class="container text-center">
 		<div class="row-fluid">
 			<div class="span12">
-				<div class="row-fluid">
+				<div class="row-fluid hide">
 					<div class="span3">
 						<h4>效能</h4>
 					</div>
@@ -27,7 +27,7 @@
 					</div>
 				</div>
 				<br />
-				<div class="row-fluid">
+				<div class="row-fluid hide">
 					<div class="span3">
 						<p>绩效占比</p>
 						<h4>30%</h4>
@@ -63,7 +63,7 @@
 								type="button">进入</a>
 						</shiro:hasAnyRoles>
 					</div>
-					<div class="span3">
+					<div class="span3 hide">
 						<shiro:lacksRole name="employe">
 							<shiro:lacksRole name="mt">
 								<a href="#" class="btn btn-large btn-block disabled"
@@ -79,7 +79,7 @@
 								class="btn btn-large btn-block" type="button">进入</a>
 						</shiro:hasRole>
 					</div>
-					<div class="span3">
+					<div class="span3 hide">
 						<shiro:lacksRole name="employe">
 							<a href="#" class="btn btn-large btn-block disabled"
 								type="button">进入</a>
@@ -89,7 +89,7 @@
 								class="btn btn-large btn-block" type="button">进入</a>
 						</shiro:hasRole>
 					</div>
-					<div class="span3">
+					<div class="span3 hide">
 						<shiro:lacksRole name="employe">
 							<shiro:lacksRole name="mt">
 								<a href="#" class="btn btn-large btn-block disabled"

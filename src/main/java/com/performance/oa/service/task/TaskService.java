@@ -3,7 +3,7 @@
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  *******************************************************************************/
-package com.ync365.oa.service.task;
+package com.performance.oa.service.task;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -15,21 +15,21 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.ync365.oa.bo.SpecialtyJXBo;
-import com.ync365.oa.entity.Department;
-import com.ync365.oa.entity.EfficiencyResult;
-import com.ync365.oa.entity.Employe;
-import com.ync365.oa.entity.LeaderAssessment;
-import com.ync365.oa.entity.PerformanceEvaluation;
-import com.ync365.oa.service.department.DepartmentService;
-import com.ync365.oa.service.efficiencyResult.EfficiencyResultService;
-import com.ync365.oa.service.employe.EmployeService;
-import com.ync365.oa.service.leaderAssessment.LeaderAssessmentService;
-import com.ync365.oa.service.pecontroller.PeControllerService;
-import com.ync365.oa.service.performanceevaluation.PerformanceEvaluationService;
-import com.ync365.oa.service.properties.PropertiesService;
-import com.ync365.oa.service.satisfactionresult.SatisfactionResultService;
-import com.ync365.oa.service.specialty.SpecialtyJXService;
+import com.performance.oa.bo.SpecialtyJXBo;
+import com.performance.oa.entity.Department;
+import com.performance.oa.entity.EfficiencyResult;
+import com.performance.oa.entity.Employe;
+import com.performance.oa.entity.LeaderAssessment;
+import com.performance.oa.entity.PerformanceEvaluation;
+import com.performance.oa.service.department.DepartmentService;
+import com.performance.oa.service.efficiencyResult.EfficiencyResultService;
+import com.performance.oa.service.employe.EmployeService;
+import com.performance.oa.service.leaderAssessment.LeaderAssessmentService;
+import com.performance.oa.service.pecontroller.PeControllerService;
+import com.performance.oa.service.performanceevaluation.PerformanceEvaluationService;
+import com.performance.oa.service.properties.PropertiesService;
+import com.performance.oa.service.satisfactionresult.SatisfactionResultService;
+import com.performance.oa.service.specialty.SpecialtyJXService;
 
 @Transactional
 public class TaskService {

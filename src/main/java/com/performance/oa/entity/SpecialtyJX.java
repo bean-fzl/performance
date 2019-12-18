@@ -1,4 +1,4 @@
-package com.ync365.oa.entity;
+package com.performance.oa.entity;
 
 import java.util.ArrayList;
 import java.util.Date;

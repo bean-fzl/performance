@@ -1,14 +1,9 @@
-package com.ync365.oa.bo;
+package com.performance.oa.bo;
 
 import java.util.Date;
-import java.util.List;
 
 public class EfficiencyRecordBo {
-    
-	
-	
-	
-    
+
     /**
      * 效能主键id
      */
@@ -28,7 +23,12 @@ public class EfficiencyRecordBo {
      * 计划时长
      */
     private Integer planHours;
-    
+
+    /**
+     * 任务月份
+     */
+    private Integer month;
+
     /**
      * 计划开始时间
      */
@@ -86,5 +86,13 @@ public class EfficiencyRecordBo {
     public void setEfficiencyIds(Integer efficiencyIds) {
         this.efficiencyIds = efficiencyIds;
     }
-    
+
+    public Integer getMonth() {
+        return month;
+    }
+
+    public void setMonth(Integer month) {
+        this.month = month;
+    }
+
 }

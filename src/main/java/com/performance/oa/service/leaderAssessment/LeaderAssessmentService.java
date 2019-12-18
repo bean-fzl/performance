@@ -1,4 +1,4 @@
-package com.ync365.oa.service.leaderAssessment;
+package com.performance.oa.service.leaderAssessment;
 
 import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
@@ -6,7 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +18,6 @@ import javax.transaction.Transactional;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
@@ -29,15 +27,13 @@ import org.springside.modules.persistence.DynamicSpecifications;
 import org.springside.modules.persistence.SearchFilter;
 import org.springside.modules.persistence.SearchFilter.Operator;
 
-import com.google.common.base.FinalizablePhantomReference;
-import com.ync365.commons.utils.StringUtils;
-import com.ync365.oa.entity.Department;
-import com.ync365.oa.entity.Employe;
-import com.ync365.oa.entity.LeaderAssessment;
-import com.ync365.oa.entity.Satisfaction;
-import com.ync365.oa.repository.DepartmentDao;
-import com.ync365.oa.repository.EmployeDao;
-import com.ync365.oa.repository.LeaderAssessmentDao;
+import com.performance.commons.utils.StringUtils;
+import com.performance.oa.entity.Department;
+import com.performance.oa.entity.Employe;
+import com.performance.oa.entity.LeaderAssessment;
+import com.performance.oa.repository.DepartmentDao;
+import com.performance.oa.repository.EmployeDao;
+import com.performance.oa.repository.LeaderAssessmentDao;
 
 @Service
 @Transactional

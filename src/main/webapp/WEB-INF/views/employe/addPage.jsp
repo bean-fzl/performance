@@ -104,12 +104,12 @@ $(document).ready(function(){
 					<input type="text" id="name" name="name"  />
 				</div>
 			</div>
-			<!-- <div class="control-group">
-				<label for="name" class="control-label">工号:</label>
+			<div class="control-group">
+				<label for="code" class="control-label">工号:</label>
 				<div class="controls">
 					<input type="text" id="code" name="code"  />
 				</div>
-			</div> -->
+			</div>
 			<div class="control-group">
 				<label for="name" class="control-label">邮箱:</label>
 				<div class="controls">
@@ -135,13 +135,13 @@ $(document).ready(function(){
 					</select>
 				</div>
 			</div>
-			 <!-- <div class="control-group">
+			 <div class="control-group">
 				<label for="createTime" class="control-label">入职时间:</label>
 				<div class="controls">
 					<input type="text" id="createTime" name="employmentDate" class="Wdate"  onfocus="new WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd'})"/>
 				</div>
 			</div>  
-			<div class="control-group">
+			<!--<div class="control-group">
 				<label for="departmentName" class="control-label">职位:</label>
 				<div class="controls">
 					<input type="text" id="position" name="position" />

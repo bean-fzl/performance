@@ -1,4 +1,4 @@
-package com.ync365.oa.service.projectChange;
+package com.performance.oa.service.projectChange;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,11 +17,11 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ync365.commons.utils.StringUtils;
+import com.performance.commons.utils.StringUtils;
 
-import com.ync365.oa.entity.ProjectChange;
-import com.ync365.oa.query.ProjectChangeQuery;
-import com.ync365.oa.repository.ProjectChangeDao;
+import com.performance.oa.entity.ProjectChange;
+import com.performance.oa.query.ProjectChangeQuery;
+import com.performance.oa.repository.ProjectChangeDao;
 
 
 @Component

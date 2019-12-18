@@ -23,6 +23,10 @@
 	<form action="add" method="post">
 		<table class="table table-striped table-bordered table-condensed">
 			<tr>
+				<td>部门编号：</td>
+				<td><input type="text" name="code" /></td>
+			</tr>
+			<tr>
 				<td>部门名称：</td>
 				<td><input type="text" name="name" /></td>
 			</tr>
@@ -34,10 +38,12 @@
 				<td>部门类型：</td>
 				<td><input type="hidden" name="type" id="type" value="1">
 					<select id="seleteDeptType" onclick="selectDeptType()">
-						<option value="1" selected="selected">产品</option>
-						<option value="2" >开发</option>
-						<option value="3" >UED</option>
-						<option value="4" >测试</option>
+						<option value="1" selected="selected">行政部</option>
+						<option value="2" >政治部</option>
+						<option value="3" >财务部</option>
+						<option value="4" >人事部</option>
+						<option value="5" >安全部</option>
+						<option value="6" >技术部</option>
 					</select>
 				</td>
 			</tr>

@@ -47,7 +47,7 @@
 			<sitemesh:body />
 		</div>
 	</div>
-	<script src="${ctx}/static/bootstrap/2.3.2/js/bootstrap.min.js"
+	<script src="${ctx}/static/bootstrap/3.3.7/js/bootstrap.min.js"
 		type="text/javascript"></script>
 </body>
 </html>

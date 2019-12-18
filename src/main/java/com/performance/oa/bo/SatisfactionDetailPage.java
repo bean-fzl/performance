@@ -1,4 +1,4 @@
-package com.ync365.oa.bo;
+package com.performance.oa.bo;
 
 import java.util.List;
 

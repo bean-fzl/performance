@@ -1,4 +1,4 @@
-package com.ync365.oa.web.satisfaction;
+package com.performance.oa.web.satisfaction;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,15 +15,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ync365.commons.utils.CloneUtils;
-import com.ync365.oa.bo.SatisfactionBo;
-import com.ync365.oa.bo.SatisfactionDetailPage;
-import com.ync365.oa.entity.Satisfaction;
-import com.ync365.oa.entity.SatisfactionResult;
-import com.ync365.oa.query.SatisfactionQuery;
-import com.ync365.oa.query.SatisfactionResultQuery;
-import com.ync365.oa.service.satisfaction.SatisfactionService;
-import com.ync365.oa.service.satisfactionresult.SatisfactionResultService;
+import com.performance.commons.utils.CloneUtils;
+import com.performance.oa.bo.SatisfactionBo;
+import com.performance.oa.bo.SatisfactionDetailPage;
+import com.performance.oa.entity.Satisfaction;
+import com.performance.oa.entity.SatisfactionResult;
+import com.performance.oa.query.SatisfactionQuery;
+import com.performance.oa.query.SatisfactionResultQuery;
+import com.performance.oa.service.satisfaction.SatisfactionService;
+import com.performance.oa.service.satisfactionresult.SatisfactionResultService;
 
 @Controller
 @RequestMapping(value = "/admin/satisfaction")

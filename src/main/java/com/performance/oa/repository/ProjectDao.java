@@ -1,12 +1,11 @@
-package com.ync365.oa.repository;
+package com.performance.oa.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import com.ync365.oa.entity.Project;
-import com.ync365.oa.entity.Task;
+import com.performance.oa.entity.Project;
 
 public interface ProjectDao  extends PagingAndSortingRepository<Project, Long>, JpaSpecificationExecutor<Project>{
 

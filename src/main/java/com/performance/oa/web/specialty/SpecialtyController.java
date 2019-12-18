@@ -1,4 +1,4 @@
-package com.ync365.oa.web.specialty;
+package com.performance.oa.web.specialty;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -12,19 +12,18 @@ import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.ync365.oa.bo.SpecialtyJXBo;
-import com.ync365.oa.bo.SpecialtyScoreBo;
-import com.ync365.oa.bo.SpecialtyVo;
-import com.ync365.oa.entity.Department;
-import com.ync365.oa.entity.Specialty;
-import com.ync365.oa.entity.SpecialtyHistory;
-import com.ync365.oa.query.SpecialtyQuery;
-import com.ync365.oa.service.department.DepartmentService;
-import com.ync365.oa.service.specialty.SpecialtyHistoryService;
-import com.ync365.oa.service.specialty.SpecialtyJXService;
-import com.ync365.oa.service.specialty.SpecialtyService;
+import com.performance.oa.bo.SpecialtyJXBo;
+import com.performance.oa.bo.SpecialtyScoreBo;
+import com.performance.oa.bo.SpecialtyVo;
+import com.performance.oa.entity.Department;
+import com.performance.oa.entity.Specialty;
+import com.performance.oa.entity.SpecialtyHistory;
+import com.performance.oa.query.SpecialtyQuery;
+import com.performance.oa.service.department.DepartmentService;
+import com.performance.oa.service.specialty.SpecialtyHistoryService;
+import com.performance.oa.service.specialty.SpecialtyJXService;
+import com.performance.oa.service.specialty.SpecialtyService;
 
 /**
  * 专业性----后台控制层

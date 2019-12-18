@@ -1,8 +1,9 @@
-package com.ync365.oa.query;
+package com.performance.oa.query;
 
-import com.ync365.oa.entity.Employe;
+import com.performance.oa.entity.Employe;
 
 public class DepartmentQuery {
+	public  static final Integer AVAILABLE=0;//可以查看的部门没有被删除的
 	private Long id;
 	private String departmentName;
 	private String mt;
@@ -66,5 +67,5 @@ public class DepartmentQuery {
 	public void setType(Integer type) {
 		this.type = type;
 	}
-	
+
 }

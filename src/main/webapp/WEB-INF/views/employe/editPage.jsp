@@ -36,32 +36,33 @@
 		<input type="hidden" name="id" value="${employe.id}"/>
 		<fieldset>
 			<legend><small>编辑员工</small></legend>
+
 			<div class="control-group">
-				<label for="task_title" class="control-label">姓名:</label>
+				<label for="name" class="control-label">姓名:</label>
 				<div class="controls">
 					<input type="text" id="name" name="name"  value="${employe.name}" class="input-large required" minlength="3"/>
 				</div>
 			</div>	
-			<%-- <div class="control-group">
-				<label for="description" class="control-label">工号:</label>
-				<div class="controls">
-					<input id="code" name="code" class="input-large" value="${employe.code}"></textarea>
-				</div>
-			</div> --%>
 			<div class="control-group">
-				<label for="description" class="control-label">邮箱:</label>
+				<label for="code" class="control-label">工号:</label>
 				<div class="controls">
-					<input id="email" name="email" class="input-large" value="${employe.email}"></textarea>
+					<input type="text" id="code" name="code" value="${employe.code}" class="input-large required"/>
 				</div>
 			</div>
 			<div class="control-group">
-				<label for="description" class="control-label">手机:</label>
+				<label for="email" class="control-label">邮箱:</label>
 				<div class="controls">
-					<input id="mobile" name="mobile" class="input-large" value="${employe.mobile}"></textarea>
+					<input type="text" id="email" name="email" value="${employe.email}" class="input-large required"/>
 				</div>
 			</div>
 			<div class="control-group">
-				<label for="description" class="control-label">部门:</label>
+				<label for="mobile" class="control-label">手机:</label>
+				<div class="controls">
+					<input type="text" id="mobile" name="mobile" value="${employe.mobile}" class="input-large required"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label for="selectDept" class="control-label">部门:</label>
 				<div class="controls">
 					<input type="hidden" id="departmentName" name="departmentName" class="input-large required" value="${employe.departmentName}"/>
 					<input type="hidden" id="departmentId" name="departmentId" class="input-large required" value="${employe.departmentId}">  
@@ -105,12 +106,12 @@
 					</c:choose>
 				</div>
 			</div> 
-			<%-- <div class="control-group">
+			<div class="control-group">
 				<label for="createTime" class="control-label">入职时间:</label>
 				<div class="controls">
 					<input type="text" id="createTime" name="employmentDate" value="${employe.employmentDate }" class="Wdate"  onfocus="new WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd'})"/>
 				</div>
-			</div>	 --%>
+			</div>
 			<div class="form-actions">
 				<input id="submit_btn" class="btn" type="submit" value="提交"/>&nbsp;	
 				<input id="cancel_btn" class="btn" type="button" value="返回" onclick="history.back()"/>

@@ -3,7 +3,7 @@
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  *******************************************************************************/
-package com.ync365.oa.web.account;
+package com.performance.oa.web.account;
 
 import javax.validation.Valid;
 
@@ -16,11 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ync365.oa.entity.Employe;
-import com.ync365.oa.entity.User;
-import com.ync365.oa.service.account.AccountService;
-import com.ync365.oa.service.account.ShiroDbRealm.ShiroUser;
-import com.ync365.oa.service.employe.EmployeService;
+import com.performance.oa.entity.Employe;
+import com.performance.oa.service.account.ShiroDbRealm.ShiroUser;
+import com.performance.oa.service.employe.EmployeService;
 
 /**
  * 用户修改自己资料的Controller.

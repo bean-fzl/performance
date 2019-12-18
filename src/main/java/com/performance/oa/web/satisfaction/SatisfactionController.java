@@ -1,8 +1,7 @@
-package com.ync365.oa.web.satisfaction;
+package com.performance.oa.web.satisfaction;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -17,14 +16,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.ync365.commons.utils.CloneUtils;
-import com.ync365.commons.utils.CurrentUser;
-import com.ync365.oa.bo.SatisfactionBo;
-import com.ync365.oa.entity.Efficiency;
-import com.ync365.oa.entity.Satisfaction;
-import com.ync365.oa.repository.EfficiencyDao;
-import com.ync365.oa.service.properties.PropertiesService;
-import com.ync365.oa.service.satisfaction.SatisfactionService;
+import com.performance.commons.utils.CloneUtils;
+import com.performance.commons.utils.CurrentUser;
+import com.performance.oa.bo.SatisfactionBo;
+import com.performance.oa.entity.Efficiency;
+import com.performance.oa.entity.Satisfaction;
+import com.performance.oa.repository.EfficiencyDao;
+import com.performance.oa.service.properties.PropertiesService;
+import com.performance.oa.service.satisfaction.SatisfactionService;
 
 @Controller
 @RequestMapping(value = "/satisfaction")

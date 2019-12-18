@@ -1,4 +1,4 @@
-package com.ync365.oa.web.efficiencyResult;
+package com.performance.oa.web.efficiencyResult;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -6,8 +6,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
-
-import javax.persistence.criteria.CriteriaBuilder.In;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -21,15 +19,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ync365.oa.entity.Department;
-import com.ync365.oa.entity.Efficiency;
-import com.ync365.oa.entity.EfficiencyResult;
-import com.ync365.oa.entity.Project;
-import com.ync365.oa.query.EfficiencyQuery;
-import com.ync365.oa.query.EfficiencyResultQuery;
-import com.ync365.oa.service.department.DepartmentService;
-import com.ync365.oa.service.efficiencyResult.EfficiencyResultService;
-import com.ync365.oa.service.project.ProjectService;
+import com.performance.oa.entity.Department;
+import com.performance.oa.entity.Efficiency;
+import com.performance.oa.entity.EfficiencyResult;
+import com.performance.oa.entity.Project;
+import com.performance.oa.query.EfficiencyQuery;
+import com.performance.oa.query.EfficiencyResultQuery;
+import com.performance.oa.service.department.DepartmentService;
+import com.performance.oa.service.efficiencyResult.EfficiencyResultService;
+import com.performance.oa.service.project.ProjectService;
 
 @Controller
 @RequestMapping(value="/admin/efficiencyResult")

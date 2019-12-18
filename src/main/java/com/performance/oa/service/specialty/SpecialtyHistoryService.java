@@ -1,4 +1,4 @@
-package com.ync365.oa.service.specialty;
+package com.performance.oa.service.specialty;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -12,8 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import com.ync365.oa.entity.SpecialtyHistory;
-import com.ync365.oa.repository.SpecialtyHistoryDao;
+import com.performance.oa.entity.SpecialtyHistory;
+import com.performance.oa.repository.SpecialtyHistoryDao;
 
 /**
  * 专业性历史的业务逻辑类

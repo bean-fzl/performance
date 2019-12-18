@@ -5,7 +5,7 @@
 <div id="header" class="container">
 	<div id="title">
 		<h1>
-			<a href="${ctx}/login/success">云农场</a><small>绩效系统</small>
+			<a href="${ctx}/login/success"><small>绩效系统</small></a>
 			<shiro:user>
 				<div class="btn-group pull-right">
 					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">

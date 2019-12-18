@@ -1,4 +1,4 @@
-package com.ync365.oa.web.leaderAssessment;
+package com.performance.oa.web.leaderAssessment;
 
 import java.util.List;
 import java.util.Map;
@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springside.modules.web.Servlets;
 
-import com.ync365.oa.entity.Department;
-import com.ync365.oa.entity.LeaderAssessment;
-import com.ync365.oa.service.department.DepartmentService;
-import com.ync365.oa.service.leaderAssessment.LeaderAssessmentService;
-import com.ync365.oa.service.properties.PropertiesService;
+import com.performance.oa.entity.Department;
+import com.performance.oa.entity.LeaderAssessment;
+import com.performance.oa.service.department.DepartmentService;
+import com.performance.oa.service.leaderAssessment.LeaderAssessmentService;
+import com.performance.oa.service.properties.PropertiesService;
 
 @Controller
 @RequestMapping(value = "/admin/leaderAssessment")

@@ -1,4 +1,4 @@
-package com.ync365.oa.web.efficiency;
+package com.performance.oa.web.efficiency;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import com.performance.oa.bo.EfficiencyRecordBo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.data.domain.Page;
@@ -18,22 +19,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ync365.commons.utils.CurrentUser;
-import com.ync365.oa.bo.EfficiencyBo;
-import com.ync365.oa.bo.EfficiencyViewVo;
-import com.ync365.oa.entity.Department;
-import com.ync365.oa.entity.Efficiency;
-import com.ync365.oa.entity.Employe;
-import com.ync365.oa.entity.Project;
-import com.ync365.oa.query.EfficiencyQuery;
-import com.ync365.oa.service.account.ShiroDbRealm.ShiroUser;
-import com.ync365.oa.service.department.DepartmentService;
-import com.ync365.oa.service.efficiency.EfficiencyService;
-import com.ync365.oa.service.employe.EmployeService;
-import com.ync365.oa.service.project.ProjectService;
-
-
-
+import com.performance.commons.utils.CurrentUser;
+import com.performance.oa.bo.EfficiencyBo;
+import com.performance.oa.bo.EfficiencyViewVo;
+import com.performance.oa.entity.Department;
+import com.performance.oa.entity.Efficiency;
+import com.performance.oa.entity.Employe;
+import com.performance.oa.entity.Project;
+import com.performance.oa.query.EfficiencyQuery;
+import com.performance.oa.service.account.ShiroDbRealm.ShiroUser;
+import com.performance.oa.service.department.DepartmentService;
+import com.performance.oa.service.efficiency.EfficiencyService;
+import com.performance.oa.service.employe.EmployeService;
+import com.performance.oa.service.project.ProjectService;
 
 @Controller
 @RequestMapping(value = "/efficiency")
@@ -83,11 +81,38 @@ public class EfficiencyController {
 	@RequestMapping(value = "/add",method = RequestMethod.POST)
     public String add(EfficiencyBo efficiencyBo ,Model model) {
 	    ShiroUser user = CurrentUser.getCurrentUser();
+	    for(EfficiencyRecordBo efficiencyRecordBo:efficiencyBo.getEfficiencyRecordBo()){
+            int month = efficiencyRecordBo.getMonth();
+            efficiencyRecordBo.setPlanBeginTime(beginTime(month));
+            efficiencyRecordBo.setPlanEndTime(endTime(month));
+        }
 	    Project project =  efficiencyService.add(efficiencyBo,user);
 	    model.addAttribute("project",project);
         return "efficiency/listReload";
     }
-	
+
+    private Date beginTime(int month){
+        Calendar cal = Calendar.getInstance();
+        //设置月份
+        cal.set(Calendar.MONTH, month-1);
+        //设置日历中月份的最大天数
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        //格式化日期
+        return cal.getTime();
+    }
+
+    private Date endTime(int month){
+        Calendar cal = Calendar.getInstance();
+        //设置月份
+        cal.set(Calendar.MONTH, month-1);
+        //获取某月最大天数
+        int lastDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+        //设置日历中月份的最大天数
+        cal.set(Calendar.DAY_OF_MONTH, lastDay);
+        //格式化日期
+        return cal.getTime();
+    }
+
 	@RequestMapping(value = "/isfalse",method = RequestMethod.POST)
     public String isfalse(Model model) {
         return "efficiency/addPage";
@@ -97,7 +122,7 @@ public class EfficiencyController {
     public String editPage( @RequestParam(value = "proId") int proId,Model model) {
 	    Project project = projectService.findById(proId);
 	    List<Department> departmentList = departmentService.getAll();
-	    List<EfficiencyViewVo> list = new ArrayList<EfficiencyViewVo>();
+	    List<EfficiencyViewVo> list = new ArrayList<>();
 	    
 	    list = efficiencyService.findListByProjectId(proId);
 	    model.addAttribute("project",project);
@@ -106,10 +131,21 @@ public class EfficiencyController {
 	    model.addAttribute("nDate", Calendar.getInstance().getTime());
         return "efficiency/editPage";
     }
-	
+
+    @RequestMapping(value = "/del",method = RequestMethod.GET)
+    public String del(@RequestParam(value = "proId") Long proId) {
+        projectService.delById(proId);
+        return "efficiency/listReload";
+    }
+
 	@RequestMapping(value = "/edit",method = RequestMethod.POST)
     public String edit(EfficiencyBo efficiencyBo) {
 	    ShiroUser user = CurrentUser.getCurrentUser();
+        for(EfficiencyRecordBo efficiencyRecordBo:efficiencyBo.getEfficiencyRecordBo()){
+            int month = efficiencyRecordBo.getMonth();
+            efficiencyRecordBo.setPlanBeginTime(beginTime(month));
+            efficiencyRecordBo.setPlanEndTime(endTime(month));
+        }
 	    efficiencyService.edit(efficiencyBo,user);
         return "efficiency/addPage";
     }

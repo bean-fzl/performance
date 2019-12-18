@@ -1,4 +1,4 @@
-package com.ync365.commons.redis.lock;
+package com.performance.commons.redis.lock;
 
 import redis.clients.jedis.Jedis;
 

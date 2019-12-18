@@ -1,4 +1,4 @@
-package com.ync365.oa.web.properties;
+package com.performance.oa.web.properties;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,9 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.ync365.oa.bo.PropertiesBo;
-import com.ync365.oa.entity.Properties;
-import com.ync365.oa.service.properties.PropertiesService;
+import com.performance.oa.bo.PropertiesBo;
+import com.performance.oa.entity.Properties;
+import com.performance.oa.service.properties.PropertiesService;
 
 @Controller
 @RequestMapping("/admin/properties")

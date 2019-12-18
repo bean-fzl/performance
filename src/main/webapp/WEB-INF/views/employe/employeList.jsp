@@ -17,9 +17,7 @@
 		var  myselect=document.getElementById("selectDept");
 		var index=myselect.selectedIndex ; 
 		var text=myselect.options[index].text;
-		 
 		document.getElementById("departmentName").value=text;
-		
 	}
 	
 	function selectIsMt(){
@@ -121,7 +119,7 @@ if(dd >=1 && dd<=5){
 					<td>工号</td>
 					<td>姓名</td>
 					<td>部门</td>
-					<td>职位</td>
+					<%--<td>职位</td>--%>
 					<td>是否为MT负责人</td>
 					<td>是否为项目经理</td>
 					<td>入职时间</td>
@@ -136,17 +134,18 @@ if(dd >=1 && dd<=5){
 				{{each(i,p) data.content}}
 				<tr>
 					<td>@{i+1}</td>
-					<td></td>
+					<td>@{p.code}</td>
 					<td>@{p.name}</td>
 					<td>@{p.departmentName}</td>
-					<td></td>
 					<td>@{formatIsMt(p.isMt)}</td>
 					<td>@{formatIsPm(p.isPm)}</td>
-					<td></td>
+					<td>@{formatDate(p.employmentDate)}</td>
 					<td>
 						<a href="view/@{p.id}">查看</a>
-						<a href="editPage/@{p.id}">编辑</a>
-						<a href="#" onclick="delEmploye(@{p.id});">删除</a>
+						{{if p.departmentName !=0 }}
+							<a href="editPage/@{p.id}">编辑</a>
+							<a href="#" onclick="delEmploye(@{p.id});">删除</a>
+						{{/if}}
 					</td>
 				</tr>
 				{{/each}}
@@ -160,8 +159,11 @@ if(dd >=1 && dd<=5){
 			});
 			//格式化时间
 			function formatDate(times) {
-				var date = new Date(times);
-				var fm = date.format('yyyy-MM-dd');
+				var fm = "";
+				if(times){
+					var date = new Date(times);
+					fm = date.format('yyyy-MM-dd');
+				}
 				return fm;
 			}
 			//格式话是否MT

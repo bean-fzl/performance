@@ -1,4 +1,4 @@
-package com.ync365.oa.query;
+package com.performance.oa.query;
 
 import java.util.Date;
 

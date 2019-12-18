@@ -1,4 +1,4 @@
-package com.ync365.oa.service.specialty;
+package com.performance.oa.service.specialty;
 
 import java.net.URL;
 import java.net.URLConnection;
@@ -20,18 +20,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import com.ync365.oa.bo.SpecialtyJXBo;
-import com.ync365.oa.bo.SpecialtyScoreBo;
-import com.ync365.oa.entity.Department;
-import com.ync365.oa.entity.Employe;
-import com.ync365.oa.entity.Specialty;
-import com.ync365.oa.entity.SpecialtyHistory;
-import com.ync365.oa.entity.SpecialtyJX;
-import com.ync365.oa.repository.DepartmentDao;
-import com.ync365.oa.repository.EmployeDao;
-import com.ync365.oa.repository.SpecialtyDao;
-import com.ync365.oa.repository.SpecialtyHistoryDao;
-import com.ync365.oa.repository.SpecialtyJXDao;
+import com.performance.oa.bo.SpecialtyJXBo;
+import com.performance.oa.bo.SpecialtyScoreBo;
+import com.performance.oa.entity.Department;
+import com.performance.oa.entity.Employe;
+import com.performance.oa.entity.Specialty;
+import com.performance.oa.entity.SpecialtyHistory;
+import com.performance.oa.entity.SpecialtyJX;
+import com.performance.oa.repository.DepartmentDao;
+import com.performance.oa.repository.EmployeDao;
+import com.performance.oa.repository.SpecialtyDao;
+import com.performance.oa.repository.SpecialtyHistoryDao;
+import com.performance.oa.repository.SpecialtyJXDao;
 
 /**
  * 专业性--绩效的业务逻辑类

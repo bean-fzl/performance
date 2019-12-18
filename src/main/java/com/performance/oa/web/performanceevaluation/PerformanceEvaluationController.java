@@ -1,4 +1,4 @@
-package com.ync365.oa.web.performanceevaluation;
+package com.performance.oa.web.performanceevaluation;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,20 +17,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ync365.commons.utils.CurrentUser;
-import com.ync365.commons.utils.StringUtils;
-import com.ync365.oa.bo.PerformanceEvaluationBo;
-import com.ync365.oa.bo.SpecialtyJXBo;
-import com.ync365.oa.entity.EfficiencyResult;
-import com.ync365.oa.entity.Employe;
-import com.ync365.oa.entity.PeController;
-import com.ync365.oa.entity.PerformanceEvaluation;
-import com.ync365.oa.query.PerformanceEvaluationQuery;
-import com.ync365.oa.service.efficiencyResult.EfficiencyResultService;
-import com.ync365.oa.service.employe.EmployeService;
-import com.ync365.oa.service.pecontroller.PeControllerService;
-import com.ync365.oa.service.performanceevaluation.PerformanceEvaluationService;
-import com.ync365.oa.service.specialty.SpecialtyJXService;
+import com.performance.commons.utils.CurrentUser;
+import com.performance.commons.utils.StringUtils;
+import com.performance.oa.bo.PerformanceEvaluationBo;
+import com.performance.oa.bo.SpecialtyJXBo;
+import com.performance.oa.entity.EfficiencyResult;
+import com.performance.oa.entity.Employe;
+import com.performance.oa.entity.PeController;
+import com.performance.oa.entity.PerformanceEvaluation;
+import com.performance.oa.query.PerformanceEvaluationQuery;
+import com.performance.oa.service.efficiencyResult.EfficiencyResultService;
+import com.performance.oa.service.employe.EmployeService;
+import com.performance.oa.service.pecontroller.PeControllerService;
+import com.performance.oa.service.performanceevaluation.PerformanceEvaluationService;
+import com.performance.oa.service.specialty.SpecialtyJXService;
 
 @Controller
 @RequestMapping(value = "/performanceEvaluation")

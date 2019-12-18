@@ -1,12 +1,9 @@
-package com.ync365.oa.bo;
+package com.performance.oa.bo;
 
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-import com.ync365.oa.entity.Employe;
+import com.performance.oa.entity.Employe;
 
 
 public class EfficiencyViewVo {
@@ -61,7 +58,9 @@ public class EfficiencyViewVo {
      * 计划 时长
      */
     private Integer planHours;
-    
+
+    private Integer month;
+
     /**
      * 实际 开始时间
      */
@@ -290,6 +289,12 @@ public class EfficiencyViewVo {
         this.employeList = employeList;
     }
 
-    
+    public Integer getMonth() {
+        return month;
+    }
+
+    public void setMonth(Integer month) {
+        this.month = month;
+    }
     
 }

@@ -1,4 +1,4 @@
-package com.ync365.oa.web.employe;
+package com.performance.oa.web.employe;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -18,14 +18,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ync365.commons.utils.CurrentUser;
-import com.ync365.commons.utils.DepartmentConstant;
-import com.ync365.oa.entity.Department;
-import com.ync365.oa.entity.Employe;
-import com.ync365.oa.query.EmployeQuery;
-import com.ync365.oa.service.account.ShiroDbRealm.ShiroUser;
-import com.ync365.oa.service.department.DepartmentService;
-import com.ync365.oa.service.employe.EmployeService;
+import com.performance.commons.utils.DepartmentConstant;
+import com.performance.oa.entity.Department;
+import com.performance.oa.entity.Employe;
+import com.performance.oa.query.EmployeQuery;
+import com.performance.oa.service.department.DepartmentService;
+import com.performance.oa.service.employe.EmployeService;
 
 @Controller
 @RequestMapping(value="/admin/employe")

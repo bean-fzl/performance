@@ -1,4 +1,4 @@
-package com.ync365.oa.web.specialty;
+package com.performance.oa.web.specialty;
 
 
 
@@ -20,17 +20,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ync365.commons.utils.CurrentUser;
-import com.ync365.oa.bo.SpecialtyJXBo;
-import com.ync365.oa.entity.Employe;
-import com.ync365.oa.entity.PeController;
-import com.ync365.oa.entity.SpecialtyHistory;
-import com.ync365.oa.entity.SpecialtyJX;
-import com.ync365.oa.service.account.ShiroDbRealm.ShiroUser;
-import com.ync365.oa.service.employe.EmployeService;
-import com.ync365.oa.service.pecontroller.PeControllerService;
-import com.ync365.oa.service.specialty.SpecialtyHistoryService;
-import com.ync365.oa.service.specialty.SpecialtyJXService;
+import com.performance.commons.utils.CurrentUser;
+import com.performance.oa.bo.SpecialtyJXBo;
+import com.performance.oa.entity.Employe;
+import com.performance.oa.entity.PeController;
+import com.performance.oa.entity.SpecialtyHistory;
+import com.performance.oa.entity.SpecialtyJX;
+import com.performance.oa.service.account.ShiroDbRealm.ShiroUser;
+import com.performance.oa.service.employe.EmployeService;
+import com.performance.oa.service.pecontroller.PeControllerService;
+import com.performance.oa.service.specialty.SpecialtyHistoryService;
+import com.performance.oa.service.specialty.SpecialtyJXService;
 
 /**
  * 专业性绩效----前台控制层

@@ -15,6 +15,10 @@
 <body>
 	<table class="table table-striped table-bordered table-condensed">
 			<tr>
+				<td>部门编码：</td>
+				<td>${department.code }</td>
+			</tr>
+			<tr>
 				<td>部门名称：</td>
 				<td>${department.name }</td>
 			</tr>

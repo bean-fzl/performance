@@ -88,4 +88,6 @@ public class PropertiesService {
         PropertiesService.SPECIALTY_SCORE = Integer.valueOf(specialty.getValue());
         PropertiesService.EFFICIENCY_SCORE = Integer.valueOf(efficiency.getValue());
         PropertiesService.LEADER_ASSESSMENT_SCORE = Integer.valueOf(leader_assessment.getValue());
-        PropertiesService.SATISFACTION_SCORE = Integer.valueOf(satisfaction.getV
+        PropertiesService.SATISFACTION_SCORE = Integer.valueOf(satisfaction.getValue());
+    }
+}

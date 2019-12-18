@@ -1,6 +1,6 @@
-package com.ync365.commons.redis.lock;
+package com.performance.commons.redis.lock;
 
-import com.ync365.commons.redis.JedisShardedTemplate;
+import com.performance.commons.redis.JedisShardedTemplate;
 
 /**
  * Redis distributed lock implementation.

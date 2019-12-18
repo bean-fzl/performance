@@ -1,4 +1,4 @@
-package com.ync365.oa.web.performanceevaluation;
+package com.performance.oa.web.performanceevaluation;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -24,11 +24,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ync365.oa.entity.Department;
-import com.ync365.oa.entity.PerformanceEvaluation;
-import com.ync365.oa.query.PerformanceEvaluationQuery;
-import com.ync365.oa.service.department.DepartmentService;
-import com.ync365.oa.service.performanceevaluation.PerformanceEvaluationService;
+import com.performance.oa.entity.Department;
+import com.performance.oa.entity.PerformanceEvaluation;
+import com.performance.oa.query.PerformanceEvaluationQuery;
+import com.performance.oa.service.department.DepartmentService;
+import com.performance.oa.service.performanceevaluation.PerformanceEvaluationService;
 
 @Controller
 @RequestMapping(value = "/admin/performanceEvaluation")

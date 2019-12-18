@@ -212,9 +212,9 @@ CREATE TABLE `employe` (
 -- Records of employe
 -- ----------------------------
 INSERT INTO `employe` VALUES ('48', '0', 'admin', '0', '0', '0', '', '', null, null, 'admin', 'admin', null, null, '0');
-INSERT INTO `employe` VALUES ('49', 'aaa', 'aaa', '1', '产品', '0', '', '', '2015-12-14 11:01:37', '2016-01-01 18:42:03', 'aaa1', '123456', 'aaa@ync365.com', '132000', '0');
+INSERT INTO `employe` VALUES ('49', 'aaa', 'aaa', '1', '产品', '0', '', '', '2015-12-14 11:01:37', '2016-01-01 18:42:03', 'aaa1', '123456', 'aaa@performance.com', '132000', '0');
 INSERT INTO `employe` VALUES ('50', null, 'cp1', '1', '产品', '0', '', '', null, '2016-01-01 18:42:03', 'cp1', '123456', 'lili@163.com', '13131313131', '0');
-INSERT INTO `employe` VALUES ('51', null, 'cp2', '1', '产品', '0', '', '', null, '2016-01-01 18:42:03', 'cp2', '123456', 'zhangsan@ync365.com', '15623142635', '0');
+INSERT INTO `employe` VALUES ('51', null, 'cp2', '1', '产品', '0', '', '', null, '2016-01-01 18:42:03', 'cp2', '123456', 'zhangsan@performance.com', '15623142635', '0');
 INSERT INTO `employe` VALUES ('52', null, 'cp3', '1', '产品', '0', '', '', null, '2016-01-01 18:42:03', 'cp3', '123456', 'zhang@163.com', '13131313131', '0');
 INSERT INTO `employe` VALUES ('53', null, 'kf1', '2', '平台研发MT', '0', '', '', null, '2015-12-14 11:05:00', 'kf1', '123456', '1546544854@qq.com', '18565626289', '0');
 INSERT INTO `employe` VALUES ('54', null, 'kf2', '2', '平台研发MT', '0', '', '', null, '2015-12-14 11:05:26', 'kf2', '123456', '545656456@qq.com', '18259595689', '0');
@@ -227,21 +227,21 @@ INSERT INTO `employe` VALUES ('61', null, 'ued1', '3', 'UED', null, '', '', nul
 INSERT INTO `employe` VALUES ('62', null, 'ued2', '3', 'UED', null, '', '', null, '2015-12-14 12:44:06', 'ued2', '123456', 'ued2@aa.com', '13810805678', '0');
 INSERT INTO `employe` VALUES ('63', null, 'ued3', '3', 'UED', null, '', '', null, '2015-12-14 12:44:06', 'ued3', '123456', 'ued3@qq.com', '13810805678', '0');
 INSERT INTO `employe` VALUES ('64', null, 'cs2', '4', '测试', null, '', '', null, '2016-01-01 19:06:02', 'cs2', '123456', 'cs2@qq.com', '13810805678', '0');
-INSERT INTO `employe` VALUES ('65', null, 'ued4', '3', 'UED', null, '', '', null, '2015-12-14 12:44:06', 'ddsad', 'ddsad123', 'ddsad@ync365.com', '', '0');
-INSERT INTO `employe` VALUES ('78', null, 'kaka', '-1', '其它', null, '', '', null, '2015-12-15 11:21:50', 'kaka', 'kaka123', 'kaka@ync365.com', '', '0');
-INSERT INTO `employe` VALUES ('79', null, 'tt', '1', '产品', null, '', '', null, '2016-01-01 18:42:04', 'tt', 'tt123', 'tt@ync365.com', '', '0');
-INSERT INTO `employe` VALUES ('80', '121l', 'test2', '21', 'aaa2', 'abc2', '', '', '2015-12-15 13:23:25', '2015-12-15 13:23:25', 'aaa', 'aaa', 'aaa@ync365.com', '1231231321', null);
-INSERT INTO `employe` VALUES ('81', null, 'ggg', '1', '产品', null, '', '', null, '2016-01-01 18:42:03', 'ggg', 'ggg123', 'ggg@ync365.com', '', '0');
-INSERT INTO `employe` VALUES ('82', null, 'ffafa', '4', '测试', null, '', '', null, '2016-01-01 19:06:02', 'fafaf', 'fafaf123', 'fafaf@ync365.com', '', '0');
-INSERT INTO `employe` VALUES ('83', null, 'uuuu', '4', '测试', null, '', '', null, '2016-01-01 19:06:02', 'uuuu', 'uuuu123', 'uuuu@ync365.com', '', '0');
-INSERT INTO `employe` VALUES ('84', null, 'wer', '4', '测试', null, '', '', null, '2016-01-01 19:02:54', 'wer', 'wer123', 'wer@ync365.com', '', '0');
-INSERT INTO `employe` VALUES ('85', null, 'qqqqqq', '4', '测试', null, '', '', null, '2016-01-01 19:13:42', 'qqqqq', 'qqqqq123', 'qqqqq@ync365.com', '', '0');
-INSERT INTO `employe` VALUES ('86', null, '测试1218负责人', '5', '测试部--12月18号', null, '', '', null, '2015-12-18 10:37:01', 'zhangsan', 'zhangsan123', 'zhansan@ync365.com', '15012345678', '0');
-INSERT INTO `employe` VALUES ('87', null, '曹操1218', '5', '测试部--12月18号', null, '', '', null, '2015-12-18 10:37:48', 'caocao', 'caocao123', 'caocao@ync365.com', '15112345678', '0');
-INSERT INTO `employe` VALUES ('88', null, '刘备1218', '5', '测试部--12月18号', null, '', '', null, '2015-12-18 10:38:30', 'liubei', 'liubei123', 'liubei@ync365.com', '15212345678', '0');
-INSERT INTO `employe` VALUES ('89', null, '关羽1218', '5', '测试部--12月18号', null, '', '', null, '2015-12-18 10:39:06', 'guanyu', 'guanyu123', 'guanyu@ync365.com', '15312345678', '0');
-INSERT INTO `employe` VALUES ('90', null, '马超1218', '5', '测试部--12月18号', null, '', '', null, '2015-12-18 10:39:41', 'machao', 'machao123', 'machao@ync365.com', '15512345678', '0');
-INSERT INTO `employe` VALUES ('91', null, '赵云1218', '5', '测试部--12月18号', null, '', '', null, '2015-12-18 10:40:10', 'zhaoyun', 'zhaoyun123', 'zhaoyun@ync365.com', '15612345678', '0');
+INSERT INTO `employe` VALUES ('65', null, 'ued4', '3', 'UED', null, '', '', null, '2015-12-14 12:44:06', 'ddsad', 'ddsad123', 'ddsad@performance.com', '', '0');
+INSERT INTO `employe` VALUES ('78', null, 'kaka', '-1', '其它', null, '', '', null, '2015-12-15 11:21:50', 'kaka', 'kaka123', 'kaka@performance.com', '', '0');
+INSERT INTO `employe` VALUES ('79', null, 'tt', '1', '产品', null, '', '', null, '2016-01-01 18:42:04', 'tt', 'tt123', 'tt@performance.com', '', '0');
+INSERT INTO `employe` VALUES ('80', '121l', 'test2', '21', 'aaa2', 'abc2', '', '', '2015-12-15 13:23:25', '2015-12-15 13:23:25', 'aaa', 'aaa', 'aaa@performance.com', '1231231321', null);
+INSERT INTO `employe` VALUES ('81', null, 'ggg', '1', '产品', null, '', '', null, '2016-01-01 18:42:03', 'ggg', 'ggg123', 'ggg@performance.com', '', '0');
+INSERT INTO `employe` VALUES ('82', null, 'ffafa', '4', '测试', null, '', '', null, '2016-01-01 19:06:02', 'fafaf', 'fafaf123', 'fafaf@performance.com', '', '0');
+INSERT INTO `employe` VALUES ('83', null, 'uuuu', '4', '测试', null, '', '', null, '2016-01-01 19:06:02', 'uuuu', 'uuuu123', 'uuuu@performance.com', '', '0');
+INSERT INTO `employe` VALUES ('84', null, 'wer', '4', '测试', null, '', '', null, '2016-01-01 19:02:54', 'wer', 'wer123', 'wer@performance.com', '', '0');
+INSERT INTO `employe` VALUES ('85', null, 'qqqqqq', '4', '测试', null, '', '', null, '2016-01-01 19:13:42', 'qqqqq', 'qqqqq123', 'qqqqq@performance.com', '', '0');
+INSERT INTO `employe` VALUES ('86', null, '测试1218负责人', '5', '测试部--12月18号', null, '', '', null, '2015-12-18 10:37:01', 'zhangsan', 'zhangsan123', 'zhansan@performance.com', '15012345678', '0');
+INSERT INTO `employe` VALUES ('87', null, '曹操1218', '5', '测试部--12月18号', null, '', '', null, '2015-12-18 10:37:48', 'caocao', 'caocao123', 'caocao@performance.com', '15112345678', '0');
+INSERT INTO `employe` VALUES ('88', null, '刘备1218', '5', '测试部--12月18号', null, '', '', null, '2015-12-18 10:38:30', 'liubei', 'liubei123', 'liubei@performance.com', '15212345678', '0');
+INSERT INTO `employe` VALUES ('89', null, '关羽1218', '5', '测试部--12月18号', null, '', '', null, '2015-12-18 10:39:06', 'guanyu', 'guanyu123', 'guanyu@performance.com', '15312345678', '0');
+INSERT INTO `employe` VALUES ('90', null, '马超1218', '5', '测试部--12月18号', null, '', '', null, '2015-12-18 10:39:41', 'machao', 'machao123', 'machao@performance.com', '15512345678', '0');
+INSERT INTO `employe` VALUES ('91', null, '赵云1218', '5', '测试部--12月18号', null, '', '', null, '2015-12-18 10:40:10', 'zhaoyun', 'zhaoyun123', 'zhaoyun@performance.com', '15612345678', '0');
 
 -- ----------------------------
 -- Table structure for `leader_assessment`

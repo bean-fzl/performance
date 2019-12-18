@@ -1,4 +1,4 @@
-package com.ync365.oa.service.efficiencyResult;
+package com.performance.oa.service.efficiencyResult;
 
 import java.math.BigDecimal;
 import java.text.ParseException;
@@ -23,22 +23,22 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
-import com.ync365.commons.utils.WorkTimeCalUtils;
-import com.ync365.oa.entity.Department;
-import com.ync365.oa.entity.Efficiency;
-import com.ync365.oa.entity.EfficiencyResult;
-import com.ync365.oa.entity.Employe;
-import com.ync365.oa.query.DepartmentQuery;
-import com.ync365.oa.query.EfficiencyQuery;
-import com.ync365.oa.query.EfficiencyResultQuery;
-import com.ync365.oa.query.EmployeQuery;
-import com.ync365.oa.repository.EfficiencyDao;
-import com.ync365.oa.repository.EfficiencyResultDao;
-import com.ync365.oa.repository.EmployeDao;
-import com.ync365.oa.service.department.DepartmentService;
-import com.ync365.oa.service.efficiency.EfficiencyService;
-import com.ync365.oa.service.employe.EmployeService;
-import com.ync365.oa.service.properties.PropertiesService;
+import com.performance.commons.utils.WorkTimeCalUtils;
+import com.performance.oa.entity.Department;
+import com.performance.oa.entity.Efficiency;
+import com.performance.oa.entity.EfficiencyResult;
+import com.performance.oa.entity.Employe;
+import com.performance.oa.query.DepartmentQuery;
+import com.performance.oa.query.EfficiencyQuery;
+import com.performance.oa.query.EfficiencyResultQuery;
+import com.performance.oa.query.EmployeQuery;
+import com.performance.oa.repository.EfficiencyDao;
+import com.performance.oa.repository.EfficiencyResultDao;
+import com.performance.oa.repository.EmployeDao;
+import com.performance.oa.service.department.DepartmentService;
+import com.performance.oa.service.efficiency.EfficiencyService;
+import com.performance.oa.service.employe.EmployeService;
+import com.performance.oa.service.properties.PropertiesService;
 
 @Component
 @Transactional

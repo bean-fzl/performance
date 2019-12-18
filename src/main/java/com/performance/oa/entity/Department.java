@@ -1,4 +1,4 @@
-package com.ync365.oa.entity;
+package com.performance.oa.entity;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,7 +17,12 @@ public class Department extends IdEntity{
      * 名称
      */
     private String name;
-    
+
+    /**
+     * 部门编码
+     */
+    private String code;
+
     /**
      * 	
      */
@@ -29,11 +34,15 @@ public class Department extends IdEntity{
     private Date createTime;
     
     /***
-     * 部门类型  1、产品 2、开发 3 ued 4 测试
+     * 部门类型  1、行政部 2、政治部 3 财务部 4 人事部 5 安全部 6 技术部
      */
-    
     private Integer type;
-    
+
+    /**
+     * 是否删除
+     */
+    private Integer isDel;
+
     /**
      * 部门下所属的员工
      * @return
@@ -46,6 +55,14 @@ public class Department extends IdEntity{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getMt() {
@@ -79,6 +96,14 @@ public class Department extends IdEntity{
 
 	public void setType(Integer type) {
 		this.type = type;
-	} 
-	
+	}
+
+    public Integer getIsDel() {
+        return isDel;
+    }
+
+    public void setIsDel(Integer isDel) {
+        this.isDel = isDel;
+    }
+
 }

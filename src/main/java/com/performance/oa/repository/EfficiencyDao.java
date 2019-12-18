@@ -1,12 +1,11 @@
-package com.ync365.oa.repository;
+package com.performance.oa.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import com.ync365.oa.entity.Efficiency;
-import com.ync365.oa.entity.Task;
+import com.performance.oa.entity.Efficiency;
 
 public interface EfficiencyDao extends PagingAndSortingRepository<Efficiency, Long>, JpaSpecificationExecutor<Efficiency>  {
 

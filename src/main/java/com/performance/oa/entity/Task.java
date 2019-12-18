@@ -3,7 +3,7 @@
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  *******************************************************************************/
-package com.ync365.oa.entity;
+package com.performance.oa.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;

@@ -1,4 +1,4 @@
-package com.ync365.oa.web.leaderAssessment;
+package com.performance.oa.web.leaderAssessment;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.Servlet;
 import javax.servlet.ServletRequest;
 
 import org.apache.shiro.SecurityUtils;
@@ -25,16 +24,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ync365.commons.utils.CurrentUser;
-import com.ync365.commons.utils.StringUtils;
-import com.ync365.oa.entity.Employe;
-import com.ync365.oa.entity.LeaderAssessment;
-import com.ync365.oa.entity.PeController;
-import com.ync365.oa.service.account.ShiroDbRealm.ShiroUser;
-import com.ync365.oa.service.employe.EmployeService;
-import com.ync365.oa.service.leaderAssessment.LeaderAssessmentService;
-import com.ync365.oa.service.pecontroller.PeControllerService;
-import com.ync365.oa.service.properties.PropertiesService;
+import com.performance.commons.utils.CurrentUser;
+import com.performance.commons.utils.StringUtils;
+import com.performance.oa.entity.Employe;
+import com.performance.oa.entity.LeaderAssessment;
+import com.performance.oa.entity.PeController;
+import com.performance.oa.service.account.ShiroDbRealm.ShiroUser;
+import com.performance.oa.service.employe.EmployeService;
+import com.performance.oa.service.leaderAssessment.LeaderAssessmentService;
+import com.performance.oa.service.pecontroller.PeControllerService;
+import com.performance.oa.service.properties.PropertiesService;
 
 @Controller
 @RequestMapping(value = "/leaderAssessment")

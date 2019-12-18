@@ -3,7 +3,7 @@
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  *******************************************************************************/
-package com.ync365.oa.service.account;
+package com.performance.oa.service.account;
 
 import java.util.List;
 
@@ -14,11 +14,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import com.ync365.oa.entity.User;
-import com.ync365.oa.repository.TaskDao;
-import com.ync365.oa.repository.UserDao;
-import com.ync365.oa.service.ServiceException;
-import com.ync365.oa.service.account.ShiroDbRealm.ShiroUser;
+import com.performance.oa.entity.User;
+import com.performance.oa.repository.TaskDao;
+import com.performance.oa.repository.UserDao;
+import com.performance.oa.service.ServiceException;
+import com.performance.oa.service.account.ShiroDbRealm.ShiroUser;
 import org.springside.modules.security.utils.Digests;
 import org.springside.modules.utils.Clock;
 import org.springside.modules.utils.Encodes;

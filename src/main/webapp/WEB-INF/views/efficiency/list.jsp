@@ -20,12 +20,14 @@
 		<%-- <a href="${ctx}/efficiency/addPage">新建项目</a>	 --%>
 		<a href="${ctx}/efficiency/editPage?proId=${project.id}">修改项目</a>
 		<br/>
+		<a href="${ctx}/efficiency/del?proId=${project.id}">删除项目</a>
+		<br/>
 	</shiro:hasAnyRoles>
-	
+
 	<%@ include file="list_page_one.jsp"%>
-	
+
 	<%@ include file="list_page_two.jsp"%>
 	<%@ include file="list_page_three.jsp"%> 
-	
+
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.ync365.oa.entity;
+package com.performance.oa.entity;
 
 import java.util.Date;
 
@@ -53,7 +53,12 @@ public class Efficiency extends IdEntity{
      * 计划结束时间啊
      */
     private Date planEndTime;
-    
+
+    /**
+     * 任务月份
+     */
+    private Integer month;
+
     /**
      * 计划 时长
      */
@@ -184,6 +189,14 @@ public class Efficiency extends IdEntity{
 
     public void setPlanEndTime(Date planEndTime) {
         this.planEndTime = planEndTime;
+    }
+
+    public Integer getMonth() {
+        return month;
+    }
+
+    public void setMonth(Integer month) {
+        this.month = month;
     }
 
     public Integer getPlanHours() {

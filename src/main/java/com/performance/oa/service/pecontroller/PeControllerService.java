@@ -1,4 +1,4 @@
-package com.ync365.oa.service.pecontroller;
+package com.performance.oa.service.pecontroller;
 
 import java.util.Calendar;
 
@@ -10,8 +10,8 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ync365.oa.entity.PeController;
-import com.ync365.oa.repository.PeControllerDao;
+import com.performance.oa.entity.PeController;
+import com.performance.oa.repository.PeControllerDao;
 
 @Component
 @Transactional

@@ -1,4 +1,4 @@
-package com.ync365.oa.service.employe;
+package com.performance.oa.service.employe;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -20,9 +20,9 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ync365.oa.entity.Employe;
-import com.ync365.oa.query.EmployeQuery;
-import com.ync365.oa.repository.EmployeDao;
+import com.performance.oa.entity.Employe;
+import com.performance.oa.query.EmployeQuery;
+import com.performance.oa.repository.EmployeDao;
 
 @Component
 @Transactional

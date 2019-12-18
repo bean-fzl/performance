@@ -1,9 +1,9 @@
-package com.ync365.commons.redis.lock;
+package com.performance.commons.redis.lock;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ync365.commons.redis.JedisShardedTemplate;
+import com.performance.commons.redis.JedisShardedTemplate;
 
 /**
  * 分布式锁的简单用法

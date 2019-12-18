@@ -94,7 +94,7 @@
 	</profiles>
 	<properties>
 		<!-- 主要依赖库的版本定义 -->
-		<springside.version>4.3.0-SNAPSHOT</springside.version>
+		<springside.version>4.2.3-GA</springside.version>
 		<spring.version>4.0.5.RELEASE</spring.version>
 		<hibernate.version>4.3.5.Final</hibernate.version>
 		<spring-data-jpa.version>1.6.0.RELEASE</spring-data-jpa.version>
@@ -153,7 +153,7 @@
 		</dependency>
 		<!-- SPRINGSIDE -->
 		<dependency>
-			<groupId>io.springside</groupId>
+			<groupId>org.springside</groupId>
 			<artifactId>springside-core</artifactId>
 			<version>${springside.version}</version>
 		</dependency>
@@ -327,7 +327,7 @@
 
 		<!-- TEST begin -->
 		<dependency>
-			<groupId>io.springside</groupId>
+			<groupId>org.springside</groupId>
 			<artifactId>springside-core</artifactId>
 			<version>${springside.version}</version>
 			<classifier>tests</classifier>

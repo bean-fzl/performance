@@ -1,4 +1,4 @@
-package com.ync365.oa.web.projectChange;
+package com.performance.oa.web.projectChange;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ync365.commons.utils.CurrentUser;
-import com.ync365.oa.entity.Employe;
-import com.ync365.oa.entity.ProjectChange;
-import com.ync365.oa.query.ProjectChangeQuery;
-import com.ync365.oa.service.account.ShiroDbRealm.ShiroUser;
-import com.ync365.oa.service.employe.EmployeService;
-import com.ync365.oa.service.projectChange.ProjectChangeService;
+import com.performance.commons.utils.CurrentUser;
+import com.performance.oa.entity.Employe;
+import com.performance.oa.entity.ProjectChange;
+import com.performance.oa.query.ProjectChangeQuery;
+import com.performance.oa.service.account.ShiroDbRealm.ShiroUser;
+import com.performance.oa.service.employe.EmployeService;
+import com.performance.oa.service.projectChange.ProjectChangeService;
 
 
 

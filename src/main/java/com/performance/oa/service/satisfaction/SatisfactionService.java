@@ -1,4 +1,4 @@
-package com.ync365.oa.service.satisfaction;
+package com.performance.oa.service.satisfaction;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,21 +21,21 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
-import com.ync365.commons.utils.StringUtils;
-import com.ync365.oa.bo.SatisfactionDetailPage;
-import com.ync365.oa.bo.SatisfactionGroupByProject;
-import com.ync365.oa.entity.Department;
-import com.ync365.oa.entity.Efficiency;
-import com.ync365.oa.entity.Employe;
-import com.ync365.oa.entity.Project;
-import com.ync365.oa.entity.Satisfaction;
-import com.ync365.oa.entity.SatisfactionResult;
-import com.ync365.oa.query.SatisfactionQuery;
-import com.ync365.oa.repository.EmployeDao;
-import com.ync365.oa.repository.ProjectDao;
-import com.ync365.oa.repository.SatisfactionDao;
-import com.ync365.oa.repository.SatisfactionResultDao;
-import com.ync365.oa.service.department.DepartmentService;
+import com.performance.commons.utils.StringUtils;
+import com.performance.oa.bo.SatisfactionDetailPage;
+import com.performance.oa.bo.SatisfactionGroupByProject;
+import com.performance.oa.entity.Department;
+import com.performance.oa.entity.Efficiency;
+import com.performance.oa.entity.Employe;
+import com.performance.oa.entity.Project;
+import com.performance.oa.entity.Satisfaction;
+import com.performance.oa.entity.SatisfactionResult;
+import com.performance.oa.query.SatisfactionQuery;
+import com.performance.oa.repository.EmployeDao;
+import com.performance.oa.repository.ProjectDao;
+import com.performance.oa.repository.SatisfactionDao;
+import com.performance.oa.repository.SatisfactionResultDao;
+import com.performance.oa.service.department.DepartmentService;
 
 @Component
 @Transactional

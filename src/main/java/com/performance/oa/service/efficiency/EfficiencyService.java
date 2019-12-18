@@ -1,7 +1,5 @@
-package com.ync365.oa.service.efficiency;
+package com.performance.oa.service.efficiency;
 
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -25,23 +23,23 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ync365.commons.utils.StringUtils;
-import com.ync365.oa.bo.EfficiencyBo;
-import com.ync365.oa.bo.EfficiencyRecordBo;
-import com.ync365.oa.bo.EfficiencyViewVo;
-import com.ync365.oa.entity.Department;
-import com.ync365.oa.entity.Efficiency;
-import com.ync365.oa.entity.Employe;
-import com.ync365.oa.entity.Project;
-import com.ync365.oa.entity.ProjectChange;
-import com.ync365.oa.query.EfficiencyQuery;
-import com.ync365.oa.repository.DepartmentDao;
-import com.ync365.oa.repository.EfficiencyDao;
-import com.ync365.oa.repository.EmployeDao;
-import com.ync365.oa.repository.ProjectChangeDao;
-import com.ync365.oa.repository.ProjectDao;
-import com.ync365.oa.service.account.ShiroDbRealm.ShiroUser;
-import com.ync365.oa.service.satisfaction.SatisfactionService;
+import com.performance.commons.utils.StringUtils;
+import com.performance.oa.bo.EfficiencyBo;
+import com.performance.oa.bo.EfficiencyRecordBo;
+import com.performance.oa.bo.EfficiencyViewVo;
+import com.performance.oa.entity.Department;
+import com.performance.oa.entity.Efficiency;
+import com.performance.oa.entity.Employe;
+import com.performance.oa.entity.Project;
+import com.performance.oa.entity.ProjectChange;
+import com.performance.oa.query.EfficiencyQuery;
+import com.performance.oa.repository.DepartmentDao;
+import com.performance.oa.repository.EfficiencyDao;
+import com.performance.oa.repository.EmployeDao;
+import com.performance.oa.repository.ProjectChangeDao;
+import com.performance.oa.repository.ProjectDao;
+import com.performance.oa.service.account.ShiroDbRealm.ShiroUser;
+import com.performance.oa.service.satisfaction.SatisfactionService;
 
 
 @Component
@@ -153,7 +151,7 @@ public class EfficiencyService {
         projectDao.save(project);
         
         //创建list用于封装数据 用于客户满意度使用
-        List<Efficiency> efficiency_list_t = new ArrayList<Efficiency>();
+        List<Efficiency> efficiency_list_t = new ArrayList<>();
         
         if(null != efficiencyBo.getEfficiencyRecordBo() && efficiencyBo.getEfficiencyRecordBo().size() > 0){
             //根据项目id去efficiency查询此项目id下所有的参与人员
@@ -182,6 +180,7 @@ public class EfficiencyService {
                                 if(null != temp_eff_one.getEfficiencyIds()){
                                     if(temp.getId().intValue() == temp_eff_one.getEfficiencyIds().intValue()){
                                         //需要修改的数据列表
+                                        temp.setMonth(temp_eff_one.getMonth());
                                         udate_list.add(temp);
                                         break;
                                     }
@@ -302,6 +301,7 @@ public class EfficiencyService {
             for(EfficiencyRecordBo temp_o : add_efficiency_list){
                 Efficiency efficiency_record = new Efficiency();
               //添加创建时间  项目名称  及 及创建人名称
+                efficiency_record.setMonth(temp_o.getMonth());
                 efficiency_record.setCreateTime(Calendar.getInstance().getTime());
                 if(null != project.getName()&& "" != project.getName()){
                     efficiency_record.setProjectName(project.getName());
@@ -496,6 +496,7 @@ public class EfficiencyService {
                         //创建Efficiency 对象
                         Efficiency efficiency =new Efficiency();
                         //添加创建时间  项目名称  及 及创建人名称
+                        efficiency.setMonth(efficiencyRecordBoList.get(i).getMonth());
                         efficiency.setCreateTime(Calendar.getInstance().getTime());
                         if(null != efficiencyBo.getProjectNameBo() && "" != efficiencyBo.getProjectNameBo()){
                             efficiency.setProjectName(efficiencyBo.getProjectNameBo());
@@ -819,12 +820,13 @@ public class EfficiencyService {
         if(null != dateEndTemp){
             project.setProjectEndTime(dateEndTemp);
         }
+        project.setWorkFeeling(efficiencyBo.getWorkFeeling());
+        project.setTaskType(efficiencyBo.getTaskType());
         //放入map中返回
         map.put("list", list);
         map.put("project", project);
         return  map ;
     }
-    
 
     public Page<Efficiency> findEfficiencyAll(final EfficiencyQuery q) {
         Specification<Efficiency> sp = new Specification<Efficiency>() {

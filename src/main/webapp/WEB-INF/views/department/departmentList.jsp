@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>添加部门</title>
+<title>部门列表</title>
 </head>
 <body>
 	<form action="list" method="post" class="form-inline">
@@ -18,8 +18,6 @@
 				<td><input type="text" name="mt" value="${searchParames.mt }" /></td>
 			</tr>
 			<tr>
-				<td><label class="control-label">部门id</label></td>
-				<td></label><input type="text" name="id" value="${searchParames.id }" /></td>
 				<td><label class="control-label">部门人员</label></td>
 				<td><input type="text" name="eployeName"
 					value="${searchParames.eployeName }" /></td>
@@ -32,7 +30,7 @@
 	<table class="table table-striped table-bordered table-condensed">
 		<tr>
 			<td>序号</td>
-			<td>部门ID</td>
+			<td>部门编码</td>
 			<td>部门名称</td>
 			<td>部门人员名单</td>
 			<td>部门负责人</td>
@@ -41,7 +39,7 @@
 		<c:forEach var="list" items="${departmentList }" varStatus="status">
 			<tr>
 				<td>${status.index+1 }</td>
-				<td>${list.id }</td>
+				<td>${list.code }</td>
 				<td>${list.name }</td>
 				<td><c:forEach var="employees" items="${list.es }"
 						varStatus="status">
@@ -51,7 +49,11 @@
 						</c:if>
 					</c:forEach></td>
 				<td>${list.mt }</td>
-				<td><a href="viewPage/${list.id }">查看</a> <a href="editPage/${list.id }">编辑</a></td>
+				<td>
+					<a href="viewPage/${list.id }">查看</a>
+					<a href="editPage/${list.id }">编辑</a>
+					<a href="delete/${list.id }">删除</a>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>

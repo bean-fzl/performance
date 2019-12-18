@@ -25,25 +25,25 @@
 		<input type="button" value="密码重置" class="btn_passwdReset" onclick="firm(${employe.id })" />
 		<fieldset>
 			<div class="control-group">
-				<label for="task_title" class="control-label">姓名:</label>
+				<label class="control-label">姓名:</label>
 				<div class="controls">
 					 ${employe.name} 
 				</div>
 			</div>	
-			<%-- <div class="control-group">
-				<label for="description" class="control-label">工号:</label>
+			<div class="control-group">
+				<label class="control-label">工号:</label>
 				<div class="controls">
 					 ${employe.code}
 				</div>
-			</div> --%>
+			</div>
 			<div class="control-group">
-				<label for="description" class="control-label">部门:</label>
+				<label class="control-label">部门:</label>
 				<div class="controls">
 					 ${employe.departmentName}
 				</div>
 			</div>
 			<div class="control-group">
-				<label for="description" class="control-label">是否为MT负责人:</label>
+				<label class="control-label">是否为MT负责人:</label>
 				<div class="controls">
 					<c:choose>
 	                      <c:when test="${employe.isMt==true }">是</c:when>
@@ -52,7 +52,7 @@
 				</div>
 			</div>
 			<div class="control-group">
-				<label for="description" class="control-label">是否为项目经理:</label>
+				<label class="control-label">是否为项目经理:</label>
 				<div class="controls">
 					<c:choose>
 	                      <c:when test="${employe.isPm==true }">是</c:when>
@@ -60,12 +60,12 @@
 	            	</c:choose>
 				</div>
 			</div>
-			<%-- <div class="control-group">
-				<label for="description" class="control-label">入职时间:</label>
+			<div class="control-group">
+				<label class="control-label">入职时间:</label>
 				<div class="controls">
-					 <fmt:formatDate value="${employe.createTime }" pattern="yyyy-MM-dd"/>
+					 <fmt:formatDate value="${employe.employmentDate }" pattern="yyyy-MM-dd"/>
 				</div>
-			</div> --%>
+			</div>
 			<div class="form-actions">
 				<input id="cancel_btn" class="btn" type="button" value="返回" onclick="history.back()"/>
 			</div>

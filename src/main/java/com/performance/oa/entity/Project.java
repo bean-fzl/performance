@@ -1,4 +1,4 @@
-package com.ync365.oa.entity;
+package com.performance.oa.entity;
 
 import java.util.Date;
 
@@ -19,7 +19,17 @@ public class Project extends IdEntity{
      * 参加人员
      */
     private String projectPersonnel;
-    
+
+    /**
+     * 工作属性
+     */
+    private Integer taskType;
+
+    /**
+     * 工作感想
+     */
+    private String workFeeling;
+
     /**
      * 
      */
@@ -114,6 +124,20 @@ public class Project extends IdEntity{
         this.pmId = pmId;
     }
 
-    
+    public Integer getTaskType() {
+        return taskType;
+    }
+
+    public void setTaskType(Integer taskType) {
+        this.taskType = taskType;
+    }
+
+    public String getWorkFeeling() {
+        return workFeeling;
+    }
+
+    public void setWorkFeeling(String workFeeling) {
+        this.workFeeling = workFeeling;
+    }
     
 }

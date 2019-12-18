@@ -3,7 +3,7 @@
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  *******************************************************************************/
-package com.ync365.oa.web.account;
+package com.performance.oa.web.account;
 
 import java.util.List;
 
@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import com.ync365.oa.entity.User;
-import com.ync365.oa.service.account.AccountService;
+import com.performance.oa.entity.User;
+import com.performance.oa.service.account.AccountService;
 
 /**
  * 管理员管理用户的Controller.

@@ -1,11 +1,11 @@
-package com.ync365.oa.repository;
+package com.performance.oa.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import com.ync365.oa.entity.Satisfaction;
+import com.performance.oa.entity.Satisfaction;
 
 public interface SatisfactionDao  extends PagingAndSortingRepository<Satisfaction, Long>, JpaSpecificationExecutor<Satisfaction> {
 

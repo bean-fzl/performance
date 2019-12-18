@@ -1,11 +1,7 @@
-package com.ync365.oa.query;
+package com.performance.oa.query;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-import com.ync365.oa.entity.IdEntity;
 /**
  * 专业性查询的实体
  * @author lyh

@@ -1,4 +1,4 @@
-package com.ync365.commons.redis.pool;
+package com.performance.commons.redis.pool;
 
 import java.io.IOException;
 import java.io.StringReader;

@@ -1,4 +1,4 @@
-package com.ync365.oa.service.department;
+package com.performance.oa.service.department;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -10,6 +10,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
+import com.performance.oa.query.EmployeQuery;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,11 +21,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
-import com.ync365.oa.entity.Department;
-import com.ync365.oa.entity.Employe;
-import com.ync365.oa.query.DepartmentQuery;
-import com.ync365.oa.repository.DepartmentDao;
-import com.ync365.oa.repository.EmployeDao;
+import com.performance.oa.entity.Department;
+import com.performance.oa.entity.Employe;
+import com.performance.oa.query.DepartmentQuery;
+import com.performance.oa.repository.DepartmentDao;
+import com.performance.oa.repository.EmployeDao;
 
 @Component
 @Transactional
@@ -64,18 +65,29 @@ public class DepartmentService {
 	}
 	//查询全部
 	public List<Department> getAll(){
-		return (List<Department>) departmentDao.findAll();
+		Specification<Department> sp=new Specification<Department>() {
+			@Override
+			public Predicate toPredicate(Root<Department> root,
+										 CriteriaQuery<?> query, CriteriaBuilder cb) {
+				List<Predicate> list=new ArrayList<>();
+				list.add(cb.equal(root.get("isDel").as(Integer.class), DepartmentQuery.AVAILABLE));
+				Predicate[] ps = new Predicate[list.size()];
+				query.where(cb.and(list.toArray(ps)));
+				return query.getGroupRestriction();
+			}
+		};
+		return departmentDao.findAll(sp);
+//		return (List<Department>) departmentDao.findAll();
 	}
 	//查询员工类表
 	public List<Department> find(final DepartmentQuery d){
-		
 		Specification<Department> sp=new Specification<Department>() {
-
 			@Override
 			public Predicate toPredicate(Root<Department> root,
 					CriteriaQuery<?> query, CriteriaBuilder cb) {
 				// TODO Auto-generated method stub
 				List<Predicate> list=new ArrayList<>();
+				list.add(cb.equal(root.get("isDel").as(Integer.class), DepartmentQuery.AVAILABLE));
 				if(d.getId()!=null){
 					list.add(cb.equal(root.get("id").as(Long.class),d.getId()));
 				}
@@ -85,8 +97,7 @@ public class DepartmentService {
 				if(StringUtils.isNotEmpty(d.getDepartmentName())){
 					list.add(cb.like(root.get("name").as(String.class),"%"+d.getDepartmentName()+"%"));
 				}
-				
-				
+
 				Predicate[] ps = new Predicate[list.size()];
                 query.where(cb.and(list.toArray(ps)));
                 if (StringUtils.isNotEmpty(d.getSort())) {
@@ -118,4 +129,5 @@ public class DepartmentService {
 			return dlist;
 		}
 	}
+
 }

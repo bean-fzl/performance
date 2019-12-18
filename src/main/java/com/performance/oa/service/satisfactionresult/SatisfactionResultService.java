@@ -1,4 +1,4 @@
-package com.ync365.oa.service.satisfactionresult;
+package com.performance.oa.service.satisfactionresult;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -24,14 +24,14 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
-import com.ync365.commons.utils.StringUtils;
-import com.ync365.oa.entity.Satisfaction;
-import com.ync365.oa.entity.SatisfactionResult;
-import com.ync365.oa.query.SatisfactionQuery;
-import com.ync365.oa.query.SatisfactionResultQuery;
-import com.ync365.oa.repository.SatisfactionDao;
-import com.ync365.oa.repository.SatisfactionResultDao;
-import com.ync365.oa.service.satisfaction.SatisfactionService;
+import com.performance.commons.utils.StringUtils;
+import com.performance.oa.entity.Satisfaction;
+import com.performance.oa.entity.SatisfactionResult;
+import com.performance.oa.query.SatisfactionQuery;
+import com.performance.oa.query.SatisfactionResultQuery;
+import com.performance.oa.repository.SatisfactionDao;
+import com.performance.oa.repository.SatisfactionResultDao;
+import com.performance.oa.service.satisfaction.SatisfactionService;
 
 @Component
 @Transactional

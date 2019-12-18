@@ -1,4 +1,4 @@
-package com.ync365.oa.service.performanceevaluation;
+package com.performance.oa.service.performanceevaluation;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -28,10 +28,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
-import com.ync365.commons.utils.StringUtils;
-import com.ync365.oa.entity.PerformanceEvaluation;
-import com.ync365.oa.query.PerformanceEvaluationQuery;
-import com.ync365.oa.repository.PerformanceEvaluationDao;
+import com.performance.commons.utils.StringUtils;
+import com.performance.oa.entity.PerformanceEvaluation;
+import com.performance.oa.query.PerformanceEvaluationQuery;
+import com.performance.oa.repository.PerformanceEvaluationDao;
 
 @Component
 @Transactional

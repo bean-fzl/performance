@@ -3,7 +3,7 @@
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  *******************************************************************************/
-package com.ync365.oa.service.account;
+package com.performance.oa.service.account;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -24,11 +24,11 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.common.base.Objects;
-import com.ync365.commons.utils.StringUtils;
-import com.ync365.oa.entity.Employe;
-import com.ync365.oa.entity.Properties;
-import com.ync365.oa.service.employe.EmployeService;
-import com.ync365.oa.service.properties.PropertiesService;
+import com.performance.commons.utils.StringUtils;
+import com.performance.oa.entity.Employe;
+import com.performance.oa.entity.Properties;
+import com.performance.oa.service.employe.EmployeService;
+import com.performance.oa.service.properties.PropertiesService;
 
 public class ShiroDbRealm extends AuthorizingRealm {
 

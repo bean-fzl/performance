@@ -1,4 +1,4 @@
-package com.ync365.commons.redis.pool;
+package com.performance.commons.redis.pool;
 
 import redis.clients.jedis.HostAndPort;
 import redis.clients.jedis.JedisPoolConfig;

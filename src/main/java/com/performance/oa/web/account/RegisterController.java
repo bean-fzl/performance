@@ -3,7 +3,7 @@
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  *******************************************************************************/
-package com.ync365.oa.web.account;
+package com.performance.oa.web.account;
 
 import javax.validation.Valid;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import com.ync365.oa.entity.User;
-import com.ync365.oa.service.account.AccountService;
+import com.performance.oa.entity.User;
+import com.performance.oa.service.account.AccountService;
 
 /**
  * 用户注册的Controller.
