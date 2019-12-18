@@ -7,12 +7,14 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import com.performance.oa.bo.EfficiencyVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -899,6 +901,31 @@ public class EfficiencyService {
 
     public List<Efficiency> findEfficiencyAll() {
         return (List<Efficiency>)efficiencyDao.findAll();
+    }
+
+    public List<EfficiencyVo> findEfficiencyMonth(){
+        List<EfficiencyVo> list = new ArrayList<>();
+        List<Efficiency> efficiencylist = this.findEfficiencyAll();
+        if(efficiencylist!=null && efficiencylist.size()>0){
+            efficiencylist.stream().filter(e->e.getMonth()!=null).collect(Collectors.groupingBy(Efficiency::getMonth)).forEach((k, v)->{
+                EfficiencyVo efficiencyVo = new EfficiencyVo();
+                efficiencyVo.setMonth(k);
+                Long projectCount = v.stream().map(Efficiency::getProjectId).distinct().count();
+                efficiencyVo.setProjectCount(projectCount.intValue());
+                Long employeCount = v.stream().map(Efficiency::getEmployeId).distinct().count();
+                efficiencyVo.setEmployeCount(employeCount.intValue());
+                Long departmentCount = v.stream().map(Efficiency::getDepartmentId).distinct().count();
+                efficiencyVo.setDepartmentCount(departmentCount.intValue());
+                Long planHourCount = v.stream().map(Efficiency::getPlanHours).count();
+                efficiencyVo.setPlanHourCount(planHourCount.intValue());
+                Long actualHourCount = v.stream().map(Efficiency::getActualHours).count();
+                efficiencyVo.setActualHourCount(actualHourCount.intValue());
+                Long outputHourCount = v.stream().map(Efficiency::getOutputHours).count();
+                efficiencyVo.setOutputHourCount(outputHourCount.intValue());
+                list.add(efficiencyVo);
+            });
+        }
+        return list;
     }
 
     /**

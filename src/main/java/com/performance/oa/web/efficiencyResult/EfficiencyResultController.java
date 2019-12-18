@@ -7,6 +7,8 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 
+import com.performance.oa.bo.EfficiencyVo;
+import com.performance.oa.service.efficiency.EfficiencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.data.domain.Page;
@@ -35,10 +37,13 @@ public class EfficiencyResultController {
 	
 	@Autowired
 	private EfficiencyResultService  efficiencyResultService;
-	
+
 	@Autowired
 	private DepartmentService  departmentService;
-	
+
+	@Autowired
+	private EfficiencyService efficiencyService;
+
 	@Autowired
 	private ProjectService projectService;
 	
@@ -57,14 +62,13 @@ public class EfficiencyResultController {
 	
 	@RequestMapping(value="efficiencyResultQuery",method =RequestMethod.POST)
 	@ResponseBody
-	public Page<EfficiencyResult> efficiencyResultQuery(EfficiencyResultQuery erQuery,Model model){
+	public List<EfficiencyVo> efficiencyResultQuery(EfficiencyResultQuery erQuery,Model model){
 		List<Department> d=departmentService.getAll();
 		model.addAttribute("dept",d);
-		
-		Page<EfficiencyResult> page =efficiencyResultService.find(erQuery);
-		model.addAttribute("page", page);
+		List<EfficiencyVo> list = efficiencyService.findEfficiencyMonth();
+		model.addAttribute("page", list);
 		model.addAttribute("searchParams", erQuery);
-		return page;
+		return list;
 	}
 	
 	@RequestMapping(value="selectEfficiencyBypId/{pid}",method = RequestMethod.GET)
@@ -143,7 +147,9 @@ public class EfficiencyResultController {
 			return "";	
 		}
 	}
-	
+
+
+
 	@InitBinder
     public void InitBinder(ServletRequestDataBinder bin) {
         bin.registerCustomEditor(Date.class, new CustomDateEditor( new SimpleDateFormat("yyyy-MM"), true));

@@ -124,11 +124,9 @@
 			$("#queryForm").submit();
 			$("#btnExport").click(function() {
 				$("#bar").css("display", "block");
-				var queryData = $("#queryForm").serialize();
 				$.ajax({
 					type : "POST",
-					url : "${ctx}/admin/performanceEvaluation/export",
-					data : queryData,
+					url : "${ctx}/admin/performanceEvaluation/exportEfficiency",
 					success : function(data) {
 						$("#bar").css("display", "none");
 						var url = "${ctx}/admin/performanceEvaluation/download?fileName="+ data;

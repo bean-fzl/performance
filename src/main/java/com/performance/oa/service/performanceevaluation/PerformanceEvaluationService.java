@@ -9,6 +9,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -16,6 +18,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
+import com.performance.oa.bo.EfficiencyVo;
 import com.performance.oa.entity.Efficiency;
 import com.performance.oa.service.efficiency.EfficiencyService;
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -232,7 +235,7 @@ public class PerformanceEvaluationService {
     public String exportEfficiency(String pathPre) {
         List<Efficiency> list = efficiencyService.findEfficiencyAll();
         SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
-        String filePath = Paths.get(pathPre, "jixiao" + f.format(Calendar.getInstance().getTime()) + ".xls").toString();
+        String filePath = Paths.get(pathPre, "efficiency" + f.format(Calendar.getInstance().getTime()) + ".xls").toString();
         File file = new File(filePath);
         if (file.exists()) {
             file.delete();
@@ -261,7 +264,7 @@ public class PerformanceEvaluationService {
                 HSSFRow hssfrow = sheet.createRow(i + 1);
                 hssfrow.createCell(0).setCellValue(list.get((int) (j * sheetNum + i)).getId());
                 hssfrow.createCell(1).setCellValue(list.get((int) (j * sheetNum + i)).getEmployeName() != null
-                        ? list.get((int) (j * sheetNum + i)).getProjectName() : "");
+                        ? list.get((int) (j * sheetNum + i)).getEmployeName() : "");
                 hssfrow.createCell(2).setCellValue(list.get((int) (j * sheetNum + i)).getProjectName() != null
                         ? list.get((int) (j * sheetNum + i)).getProjectName() : "");
                 hssfrow.createCell(3).setCellValue(list.get((int) (j * sheetNum + i)).getPlanBeginTime());
@@ -292,6 +295,65 @@ public class PerformanceEvaluationService {
         }
         return filePath;
     }
+
+    public String exportEfficiencyMonth(String pathPre) {
+        List<EfficiencyVo> list = efficiencyService.findEfficiencyMonth();
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        String filePath = Paths.get(pathPre, "efficiencyMonth" + f.format(Calendar.getInstance().getTime()) + ".xls").toString();
+        File file = new File(filePath);
+        if (file.exists()) {
+            file.delete();
+        }
+        try {
+            if (!file.getParentFile().exists()) {
+                file.getParentFile().mkdirs();
+            }
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
+        Long sheetNum = 60000l;
+        Long num = (long) Math.ceil((double) list.size() / sheetNum);
+        SimpleDateFormat f1 = new SimpleDateFormat("yyyy-MM");
+        for (int j = 0; j < num; j++) {
+            HSSFSheet sheet = hssfWorkbook.createSheet("sheet" + j);
+            HSSFRow hssftitle = sheet.createRow(0);
+            String[] titles = { "月份", "项目数", "参与员工数", "参与部门数", "计划总工时", "实际总工时", "产出总工时" };
+            for (int i = 0; i < titles.length; i++) {
+                HSSFCell c = hssftitle.createCell(i);
+                c.setCellValue(titles[i]);
+            }
+            for (int i = 0; i < Math.min(list.size() - j * sheetNum, sheetNum); i++) {
+                HSSFRow hssfrow = sheet.createRow(i + 1);
+                hssfrow.createCell(0).setCellValue(list.get((int) (j * sheetNum + i)).getMonth());
+                hssfrow.createCell(1).setCellValue(list.get((int) (j * sheetNum + i)).getPlanHourCount());
+                hssfrow.createCell(2).setCellValue(list.get((int) (j * sheetNum + i)).getEmployeCount());
+                hssfrow.createCell(3).setCellValue(list.get((int) (j * sheetNum + i)).getDepartmentCount());
+                hssfrow.createCell(4).setCellValue(list.get((int) (j * sheetNum + i)).getPlanHourCount());
+                hssfrow.createCell(5).setCellValue(list.get((int) (j * sheetNum + i)).getActualHourCount());
+                hssfrow.createCell(6).setCellValue(list.get((int) (j * sheetNum + i)).getOutputHourCount());
+            }
+        }
+        FileOutputStream fileOutputStream = null;
+        try {
+            fileOutputStream = new FileOutputStream(file);
+            hssfWorkbook.write(fileOutputStream);
+        } catch (FileNotFoundException e) {
+            log.error("export", e);
+        } catch (IOException e) {
+            log.error("export", e);
+        } finally {
+            try {
+                fileOutputStream.close();
+                hssfWorkbook.close();
+            } catch (IOException e) {
+                log.error("export close", e);
+            }
+        }
+        return filePath;
+    }
+
 
     public void delete(String filePath){
         File file = new File(filePath);

@@ -25,33 +25,7 @@
 <body>
 	<div id="search">
 	<form id="form1" class="form-inline">
-			<table>
-			<tr>
-				<td><label class="control-label">姓名</label></td>
-				<td><input type="text" name="employeName"></td>
-				<td><label class="control-label">时间</label></td>
-				<td><input class="Wdate" id="first" type="text" onfocus="new WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM'})" name="createTime"/></td>
-			    <td><label class="control-label">实际工时</label></td>
-			    <td><input type="text" name="actualHours"></td>
-			</tr>
-			<tr>
-				<!-- <td><label class="control-label">工号</label></td>
-				<td><input type="text" name="employeCode"></td> -->
-				<td><label class="control-label">部门</label></td>
-				<td><input type="hidden" id="departmentName" name="departmentName">
-						<select id="selectDept" onclick="f()">
-						<option >---请选择---</option>
-						<c:forEach items="${dept }" var="dept">
-							<option value="${dept.id}" >${dept.name}</option>
-						</c:forEach>
-					</select>			
-				</td>
-				<td><label class="control-label">项目数</label></td>
-				<td><input type="text" name="projectCount"></td>
-			</tr>
-		</table>
-		<button id="submit_btn" class="btn" type="submit" >搜索</button>
-		<button id="clear_btn" class="btn" onclick="resetSearch();">清空</button>
+		<button id="btnExport" type="button" class="btn">导出</button>
 		</br>
 		</form>
 	</div>
@@ -59,20 +33,14 @@
 	<table class="table table-striped table-bordered table-condensed">
 		<thead>
 		<tr>
-			<td>序号</td>
 			<!-- <td>工号</td> -->
-			<td>姓名</td>
-			<td>部门</td>
+			<td>月份</td>
 			<td>项目数</td>
-			<td>计划工时</td>
-			<td>实际工时</td>
-			<td>产出工时</td>
-			<td>标准工时</td>
-			<td>负荷率</td>
-			<td>效能</td>
-			<td>时间</td>
-			<td>总分</td>
-			<td>操作</td>
+			<td>参与员工数</td>
+			<td>参与部门数</td>
+			<td>计划总工时</td>
+			<td>实际总工时</td>
+			<td>产出总工时</td>
 		</tr>
 		</thead>
 		<thead>
@@ -80,24 +48,15 @@
 		</thead>
 		<div id="pager"></div>
 		<script type="text/x-jquery-tmpl" id="tmplList">
-			{{each(i,p) data.content}}
+			{{each(i,p) data}}
 			<tr>
-				<td>@{i+1}</td>
-				
-				<td>@{p.employeName}</td>
-				<td>@{p.departmentName}</td>
+				<td>@{p.month}</td>
 				<td>@{p.projectCount}</td>
-				<td>@{p.planHours}</td>
-				<td>@{p.actualHours}</td>
-				<td>@{p.outputHours}</td>
-				<td>@{p.basicHours}</td>
-				<td>@{p.loadRate}%</td>
-				<td>@{p.efficiencyPercentage}%</td>
-				<td>@{formatDate(p.createTime)}</td>
-				<td>@{p.efficiencyTotalScore}</td>
-				<td>
-					<a href="view/@{p.id}" >查看</a>
-				</td>
+				<td>@{p.employeCount}</td>
+				<td>@{p.departmentCount}</td>
+				<td>@{p.planHourCount}</td>
+				<td>@{p.actualHourCount}</td>
+				<td>@{p.outputHourCount}</td>
 			<tr>
 			{{/each}}
 		</script>
@@ -107,6 +66,18 @@
 	$(function(){
 		validate();
 		$("#form1").submit();
+		$("#btnExport").click(function() {
+			$("#bar").css("display", "block");
+			$.ajax({
+				type : "POST",
+				url : "${ctx}/admin/performanceEvaluation/exportEfficiencyMonth",
+				success : function(data) {
+					$("#bar").css("display", "none");
+					var url = "${ctx}/admin/performanceEvaluation/download?fileName="+ data;
+					window.open(url);
+				}
+			});
+		})
 	});
 	function resetSearch() {
 		$("input").val('');
@@ -130,7 +101,7 @@
 			url : "${ctx}/admin/efficiencyResult/efficiencyResultQuery",
 			data : queryData,
 			success : function(data) {
-				if (data == null || data.records == 0) {
+				if (data == null || data.length == 0) {
 					$("#tbody").html("暂无记录");
 				} else {
 					$("#tbody").html($("#tmplList").tpl({

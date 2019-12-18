@@ -46,14 +46,12 @@
 					<ul class="nav nav-pills nav-stacked">
 						<li class="nav-header"></li>
 						<!-- <li class="active"><a href="#">首页</a></li> -->
-						<li class="active"><a href="javascript:void(0);"
-							onclick="js_method_fun('/admin/performanceEvaluation/list',this)">绩效总评管理</a></li>
 						<li class="dropdown"><a href="#collapseTwo"
 							data-toggle="collapse" class="dropdown-toggle">效能管理 <b
 								class="caret"></b></a>
 							<ul id="collapseTwo" class="collapse  nav nav-list">
 								<li><a href="javascript:void(0);"
-									onclick="js_method_fun('/admin/efficiencyResult/list',this)">员工月度效能</a></li>
+									onclick="js_method_fun('/admin/efficiencyResult/list',this)">月度效能</a></li>
 								<li><a href="javascript:void(0);"
 									onclick="js_method_fun('/admin/efficiency/list',this)">员工效能</a></li>
 								<li><a href="javascript:void(0);"
