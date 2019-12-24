@@ -11,7 +11,10 @@
 <body>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			window.location.href="${ctx }/home/myhome";
+			<shiro:hasAnyRoles name="employe,pm">
+			//window.location.href="${ctx }/home/myhome";
+			window.location.href="${ctx }/project/findAll";
+			</shiro:hasAnyRoles>
 		});
 	</script>
 </body>

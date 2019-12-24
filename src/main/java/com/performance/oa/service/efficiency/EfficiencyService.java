@@ -1,20 +1,14 @@
 package com.performance.oa.service.efficiency;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
-
+import com.performance.commons.utils.StringUtils;
+import com.performance.oa.bo.EfficiencyBo;
+import com.performance.oa.bo.EfficiencyRecordBo;
+import com.performance.oa.bo.EfficiencyViewVo;
 import com.performance.oa.bo.EfficiencyVo;
+import com.performance.oa.entity.*;
+import com.performance.oa.query.EfficiencyQuery;
+import com.performance.oa.repository.*;
+import com.performance.oa.service.account.ShiroDbRealm.ShiroUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -25,23 +19,13 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.performance.commons.utils.StringUtils;
-import com.performance.oa.bo.EfficiencyBo;
-import com.performance.oa.bo.EfficiencyRecordBo;
-import com.performance.oa.bo.EfficiencyViewVo;
-import com.performance.oa.entity.Department;
-import com.performance.oa.entity.Efficiency;
-import com.performance.oa.entity.Employe;
-import com.performance.oa.entity.Project;
-import com.performance.oa.entity.ProjectChange;
-import com.performance.oa.query.EfficiencyQuery;
-import com.performance.oa.repository.DepartmentDao;
-import com.performance.oa.repository.EfficiencyDao;
-import com.performance.oa.repository.EmployeDao;
-import com.performance.oa.repository.ProjectChangeDao;
-import com.performance.oa.repository.ProjectDao;
-import com.performance.oa.service.account.ShiroDbRealm.ShiroUser;
-import com.performance.oa.service.satisfaction.SatisfactionService;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.stream.Collectors;
 
 
 @Component
@@ -64,9 +48,6 @@ public class EfficiencyService {
     
     @Autowired
     private ProjectChangeDao projectChangeDao;
-    
-    @Autowired
-    private SatisfactionService satisfactionService;
     
     /**
      * 添加   效能新建添加方法
@@ -96,9 +77,6 @@ public class EfficiencyService {
         
         //添加到efficiency 
         efficiency_list_t = addEff(efficiencyBo,mapT,user ,efficiency_list_t);
-        
-        //客户满意度数据插入
-        satisfactionService.insertSatisfactionByEfficiency(efficiency_list_t);
         
         return project;
     }
@@ -252,15 +230,13 @@ public class EfficiencyService {
             }
         }
         
-        //客户满意度数据插入
-        satisfactionService.insertSatisfactionByEfficiency(efficiency_list_t);
     }
     
 
     /**
      * 删除时需要删除客户满意度信息中的相关记录
      * @param old_eff_list 
-     * @param List<Efficiency> del_list
+     * @param del_list
      */
     private void deleteSatisfactionByEffciencyList(List<Efficiency> del_list, List<Efficiency> old_eff_list) {
         if(null != del_list && del_list.size() > 0){
@@ -285,15 +261,13 @@ public class EfficiencyService {
                     efficiencySatisfactionList.add(eff_two);
                 }
             }
-            //客户满意度方法
-            satisfactionService.deleteSatisfactionByEffciency(efficiencySatisfactionList);
         }
     }
 
 
     /**
      * 修改时新增的效能 人员
-     * @param List<EfficiencyRecordBo> add_efficiency_list
+     * @param add_efficiency_list
      * @param user
      * @param project 
      * @return
@@ -1004,8 +978,8 @@ public class EfficiencyService {
 
     /***
      * 根据员工的编号和时间查找出该员工本月的效能，然后计算绩效能的分数
-     * @param h
-     * @param hours
+     * @param employeId
+     * @param time
      * @return
      */
     public List<Efficiency> findEfficiencyByEmployeCodeAndTime(final Long employeId ,final Date time){

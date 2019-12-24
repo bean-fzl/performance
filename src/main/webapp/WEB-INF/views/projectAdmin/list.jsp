@@ -21,8 +21,6 @@
 					<td><input type="text" name="pm"></td>
 					<td><label class="control-label">项目ID</td>
 					<td><input type="text" id =""name="id"></td>
-				</tr>
-				<tr>
 					<td><label class="control-label">项目人员</label></td>
 					<td><input type="text" name="projectPersonnel"></td> 
 					
@@ -41,10 +39,12 @@
 					<td><input type="text" id= "actualHoursSearch" name="actualHoursSearch"></td>
 					<td><label class="control-label">产出工时</label></td>
 					<td><input type="text" id="outputHoursSearch" name="outputHoursSearch"></td>
+					<td>
+						<button class="btn" id="btnSearch" type="submit">搜索</button>
+						<button class="btn" id="btnSearch" type="reset">清空</button>
+					</td>
 				</tr>
 			</table> 
-			<button class="btn" id="btnSearch" type="submit">搜索</button>
-			<button class="btn" id="btnSearch" type="reset">清空</button>
 	</form>
 	<div id="pager"></div>
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">

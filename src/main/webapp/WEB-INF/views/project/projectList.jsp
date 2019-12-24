@@ -10,21 +10,17 @@
 <title>项目列表</title>
 </head>
 <body>
-	<form id="queryForm" class="form-inline">
+	<form id="queryForm" class="form-inline" style="margin-bottom: 0px;">
 		<table >
 			<tr>
 				<td><label class="control-label">项目名称</label></td>
 				<td><input type="text" name="name" value="${searchParames.name }"/></td>
 				<td><label class="control-label">项目经理</label></td>
 				<td><input type="text" name="pm" value="${searchParames.pm }"/></td>
-			</tr>
-			<tr>
 				<td><label class="control-label">项目id</label></td>
 				<td><input type="text" name="id" value="${searchParames.id }" /></td>
 				<td><label class="control-label">项目人员</label></td>
 				<td><input type="text" name="projectPersonnel" value="${searchParames.projectPersonnel }" /></td>
-			</tr>
-			<tr>
 				<td><label class="control-label">状态</label></td>
 				<td>
 					<select name="state" id="searchSelector">
@@ -33,15 +29,17 @@
 						<option value="1">已完成</option>
 					</select>
 				</td>
-				<td><label class="control-label">项目时间</label></td>
+				<%--<td><label class="control-label">项目时间</label></td>
 				<td>
 					<input type="text" name="projectBeginTime"  type="text" onfocus="new WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd'})" value="${projectBeginTime }"/> ~ 
 					<input type="text" name="projectEndTime"  type="text" onfocus="new WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd'})" value="${projectEndTime }"/>
+				</td>--%>
+				<td>
+					<button class="btn" type="submit" >搜索</button>
+					<button class="btn" type="button" onclick="resetSearch();">清空</button>
 				</td>
 			</tr>
 		</table>
-		<button class="btn" type="submit" >搜索</button>
-	    <button class="btn" type="button" onclick="resetSearch();">清空</button>
 	</form>
 	</br>
 	<table class="table table-striped table-bordered table-condensed">

@@ -22,10 +22,13 @@
 					<td><input type="text" id = "employeName" name="employeName"></td>
 					<td><label class="control-label">项目经理</label></td>
 					<td><input type="text" id ="pm" name="pm"></td>
-					<!-- <td><label class="control-label">工号</label></td>
-					<td><input type="text" id="employeCode" name="employeCode"></td> -->
 					<td><label class="control-label">项目</label></td>
 					<td><input type="text" id = "projectName" name="projectName"></td>
+					<td><label class="control-label">周期</label></td>
+					<td><input class="Wdate" id="first" type="text" onfocus="new WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd'})" id="planBeginTime" name="planBeginTime"/>
+						~
+						<input class="Wdate" id="last" type="text" onfocus="new WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd'})" id = "planEndTime"name="planEndTime"/>
+					</td>
 				</tr>
 				<tr>
 					<td><label class="control-label">计划工时</label></td>
@@ -37,23 +40,17 @@
 							<option value="1">已完成</option>
 						</select>
 					</td>
-					<td><label class="control-label">周期</label></td>
-					<td><input class="Wdate" id="first" type="text" onfocus="new WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd'})" id="planBeginTime" name="planBeginTime"/>
-								~
-						<input class="Wdate" id="last" type="text" onfocus="new WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd'})" id = "planEndTime"name="planEndTime"/>
-					</td>
-					
-				</tr>
-				<tr>
 					<td><label class="control-label">实际工时</label></td>
 					<td><input type="text" id = "actualHours" name="actualHours"></td>
 					<td><label class="control-label">产出工时</label></td>
-					<td><input type="text" id = "outputHours" name="outputHours"></td>
+					<td>
+						<input type="text" id = "outputHours" name="outputHours">
+						<button class="btn" id="btnSearch" type="submit">搜索</button>
+						<button class="btn" id="clear" type="reset">清空</button>
+						<button id="btnExport" type="button" class="btn">导出</button>
+					</td>
 				</tr>
 			</table>
-			<button class="btn" id="btnSearch" type="submit">搜索</button>
-			<button class="btn" id="clear" type="reset">清空</button>
-			<button id="btnExport" type="button" class="btn">导出</button>
 	</form>
 	<div id="pager"></div>
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">

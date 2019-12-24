@@ -7,6 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>ync jx</name>
+
 	<profiles>
 		<profile>
 			<id>employe</id>
@@ -30,62 +31,6 @@
 						<directory>profile/${profiles.active}</directory>
 						<includes>
 							<include>*.xml</include>
-						</includes>
-					</resource>
-				</resources>
-			</build>
-		</profile>
-		<profile>
-			<id>admin</id>
-			<properties>
-				<profiles.active>admin</profiles.active>
-			</properties>
-			<build>
-				<resources>
-					<resource>
-						<directory>src/main/resources</directory>
-						<excludes>
-							<exclude>application-quartz.xml</exclude>
-						</excludes>
-						<includes>
-							<include>ehcache/*.xml</include>
-							<include>*.xml</include>
-							<include>*.properties</include>
-						</includes>
-					</resource>
-					<resource>
-						<directory>profile/${profiles.active}</directory>
-						<includes>
-							<include>*.xml</include>
-						</includes>
-					</resource>
-				</resources>
-			</build>
-		</profile>
-		<profile>
-			<id>production</id>
-			<properties>
-				<profiles.active>production</profiles.active>
-			</properties>
-			<build>
-				<resources>
-					<resource>
-						<directory>src/main/resources</directory>
-						<excludes>
-							<exclude>application-quartz.xml</exclude>
-							<exclude>application.properties</exclude>
-						</excludes>
-						<includes>
-							<include>ehcache/*.xml</include>
-							<include>*.xml</include>
-							<include>*.properties</include>
-						</includes>
-					</resource>
-					<resource>
-						<directory>profile/${profiles.active}</directory>
-						<includes>
-							<include>*.xml</include>
-							<include>*.properties</include>
 						</includes>
 					</resource>
 				</resources>
@@ -471,8 +416,8 @@
 				<version>2.4</version>
 				<configuration>
 					<warName>${profiles.active}</warName>
-					<!-- <webResources> <resource> <filtering>true</filtering> <directory>src/main/webapp</directory> 
-						<includes> <include>**/web.xml</include> </includes> </resource> </webResources> 
+					<!-- <webResources> <resource> <filtering>true</filtering> <directory>src/main/webapp</directory>
+						<includes> <include>**/web.xml</include> </includes> </resource> </webResources>
 						<warSourceDirectory>src/main/webapp</warSourceDirectory> <webXml>src/main/webapp/WEB-INF/web.xml</webXml> -->
 				</configuration>
 			</plugin>

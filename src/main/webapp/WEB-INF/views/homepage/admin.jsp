@@ -42,7 +42,7 @@
 	<div class="container" style="width: auto">
 		<div class="container-fluid ">
 			<div class="row-fluid">
-				<div class="span2">
+				<div class="span2 hide">
 					<ul class="nav nav-pills nav-stacked">
 						<li class="nav-header"></li>
 						<!-- <li class="active"><a href="#">首页</a></li> -->

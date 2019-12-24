@@ -46,7 +46,7 @@
 		</c:forEach> --%>
 	<div class="container-fluid ">
 		<div class="row-fluid">
-			<div class="span2">
+			<div class="col-lg-2 col-md-4 col-sm-4">
 				<ul class="nav nav-tabs nav-stacked">
 					<li class="nav-header"><h4>项目列表</h4></li>
 					<c:forEach items="${projectList}" var="listTemp" varStatus="s">
@@ -56,7 +56,7 @@
 					</c:forEach>
 				</ul>
 			</div>
-			<div class="span10">
+			<div class="col-lg-10  col-md-8 col-sm-8">
 				<div class="container-fluid ">
 					<div class="row-fluid">
 						<shiro:hasAnyRoles name="pm">

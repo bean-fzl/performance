@@ -16,16 +16,16 @@
 					value="${searchParames.departmentName }"></input></td>
 				<td><label class="control-label">MT负责人</label></td>
 				<td><input type="text" name="mt" value="${searchParames.mt }" /></td>
-			</tr>
-			<tr>
 				<td><label class="control-label">部门人员</label></td>
 				<td><input type="text" name="eployeName"
 					value="${searchParames.eployeName }" /></td>
+				<td>
+					<button class="btn" type="submit">搜索</button>
+					<button class="btn" type="button" onclick="resetSearch();" /> 清空 </button>
+					<button class="btn" type="button" onclick="location.href='addPage';">添加部门</button>
+				</td>
 			</tr>
 		</table>
-		<button class="btn" type="submit">搜索</button>
-		<button class="btn" type="button" onclick="resetSearch();" /> 清空 </button>
-		<button class="btn" type="button" onclick="location.href='addPage';">添加部门</button>
 	</form>
 	<table class="table table-striped table-bordered table-condensed">
 		<tr>

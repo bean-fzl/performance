@@ -72,15 +72,11 @@ if(dd >=1 && dd<=5){
 					<td><label class="control-label">是否为项目经理</label> <input
 						type="radio"  id="isPm1" name="isPm" onclick="selectIsPm();">是 <input
 						type="radio"  id="isPm2" name="isPm" onclick="selectIsPm();">否</td>
-				</tr>
-				  <tr>
 					<td><label class="control-label">工号</label><input type="text"
 						name="code" value="${searchParames.code }"></td>
 					<td><label class="control-label">是否为MT负责人</label> <input
 						type="radio" id="isMt1" name="isMt" onclick="selectIsMt();" >是 <input
 						type="radio" id="isMt2" name="isMt" onclick="selectIsMt();" >否</td>
-				</tr>  
-				<tr>
 					<input type="hidden" id="departmentName" name="departmentName"/>
 					<td><label class="control-label">部门</label>
 					<select id="selectDept" onclick="f()">
@@ -98,11 +94,6 @@ if(dd >=1 && dd<=5){
 						onfocus="new WdatePicker({lang:'zh-cn',dateFmt:'yyyy-MM-dd'})"
 						name="createEndTime" /></td>
 				</tr> 
-				<!-- <tr>
-					<td><label class="control-label">职位</label><input type=text
-						name="position"></input></td>
-					<td></td>
-				</tr> -->
 			</table>
 			<button id="submit_btn" class="btn" type="submit">搜索</button>
 			<button id="clear_btn" class="btn" onclick="location.href='list';">清空</button>
